@@ -1,0 +1,211 @@
+export const vi = {
+  nav: {
+    home: 'Trang chủ',
+    service: 'Dịch vụ',
+    contact: 'Liên hệ',
+    cta: 'Bắt đầu ngay',
+  },
+  hero: {
+    badge: '🚀 Nền tảng công nghệ thế hệ mới',
+    title_1: 'Giải pháp số',
+    title_2: 'toàn diện cho',
+    title_3: 'doanh nghiệp',
+    subtitle:
+      'Khoảng Dung cung cấp hệ sinh thái công nghệ tích hợp AI — từ sàn thương mại điện tử, quản lý chuỗi cửa hàng đến đặt đồ uống thông minh.',
+    cta_primary: 'Khám phá ngay',
+    cta_secondary: 'Xem demo',
+    stats: {
+      clients: 'Khách hàng',
+      transactions: 'Giao dịch/ngày',
+      uptime: 'Uptime',
+      support: 'Hỗ trợ',
+    },
+  },
+  products: {
+    title: 'Sản phẩm',
+    title_highlight: 'nổi bật',
+    subtitle: 'Hệ sinh thái sản phẩm toàn diện được thiết kế để tối ưu hoá vận hành doanh nghiệp',
+    ecommerce: {
+      name: 'KD Commerce',
+      tag: 'Thương mại điện tử',
+      desc: 'Sàn TMĐT B2B/B2C đa kênh với tích hợp thanh toán, logistics và AI gợi ý sản phẩm thông minh.',
+      features: ['Đa kênh bán hàng', 'AI gợi ý sản phẩm', 'Thanh toán tích hợp', 'Quản lý kho thông minh'],
+    },
+    beverage: {
+      name: 'KD Café',
+      tag: 'Quán cà phê',
+      desc: 'Hệ thống đặt đồ uống thông minh cho quán cà phê — order QR, quản lý bàn, và phân tích xu hướng.',
+      features: ['Order QR không chạm', 'Quản lý bàn real-time', 'Phân tích doanh thu', 'Tích hợp POS'],
+    },
+    hrm: {
+      name: 'KD HRM',
+      tag: 'Quản lý nhân viên',
+      desc: 'Nền tảng HRM toàn diện — chấm công, bảng lương, đánh giá KPI và quản lý tuyển dụng AI.',
+      features: ['Chấm công thông minh', 'Bảng lương tự động', 'Đánh giá KPI', 'Tuyển dụng AI'],
+    },
+    chain: {
+      name: 'KD Chain',
+      tag: 'Chuỗi cửa hàng',
+      desc: 'Giải pháp quản lý chuỗi cửa hàng — đồng bộ tồn kho, báo cáo tập trung và phân tích AI.',
+      features: ['Đồng bộ đa chi nhánh', 'Báo cáo tập trung', 'Phân tích AI', 'Kiểm soát chất lượng'],
+    },
+  },
+  ai: {
+    badge: 'AI-Powered',
+    title: 'Trí tuệ nhân tạo',
+    title_2: 'trong từng sản phẩm',
+    subtitle:
+      'Không chỉ là phần mềm — chúng tôi tích hợp AI vào lõi mỗi nền tảng để dự đoán, tự động hoá và tối ưu hoá quy trình.',
+    features: {
+      predict: {
+        title: 'Dự đoán xu hướng',
+        desc: 'Phân tích dữ liệu lịch sử để dự báo nhu cầu, tồn kho và xu hướng thị trường.',
+      },
+      automate: {
+        title: 'Tự động hoá quy trình',
+        desc: 'AI tự động xử lý đơn hàng, phân công nhân viên và tối ưu lịch làm việc.',
+      },
+      personalize: {
+        title: 'Cá nhân hoá trải nghiệm',
+        desc: 'Gợi ý sản phẩm, ưu đãi và nội dung được cá nhân hoá cho từng khách hàng.',
+      },
+      insight: {
+        title: 'Insight thời gian thực',
+        desc: 'Dashboard AI cung cấp cái nhìn sâu sắc về vận hành kinh doanh theo thời gian thực.',
+      },
+    },
+  },
+  stats: {
+    title: 'Con số',
+    title_2: 'nói lên tất cả',
+    items: {
+      clients: { value: '500+', label: 'Doanh nghiệp tin dùng' },
+      transactions: { value: '2M+', label: 'Giao dịch mỗi ngày' },
+      uptime: { value: '99.9%', label: 'Uptime đảm bảo' },
+      cities: { value: '20+', label: 'Tỉnh thành triển khai' },
+    },
+  },
+  testimonials: {
+    title: 'Khách hàng',
+    title_2: 'nói gì về chúng tôi',
+    items: [
+      {
+        name: 'Nguyễn Minh Tuấn',
+        role: 'CEO, Chuỗi cà phê Bloom',
+        content:
+          'KD Café đã thay đổi hoàn toàn cách chúng tôi vận hành. Doanh thu tăng 35% chỉ sau 3 tháng sử dụng.',
+        avatar: 'NMT',
+      },
+      {
+        name: 'Trần Thị Lan Anh',
+        role: 'COO, FastMart Vietnam',
+        content:
+          'Hệ thống KD Commerce giúp chúng tôi quản lý hơn 10,000 SKU một cách dễ dàng. AI gợi ý sản phẩm thực sự tuyệt vời!',
+        avatar: 'TLA',
+      },
+      {
+        name: 'Lê Hoàng Nam',
+        role: 'HR Director, TechGroup JSC',
+        content:
+          'KD HRM tiết kiệm cho chúng tôi 20 giờ/tuần trong công tác quản lý nhân sự. Tính năng chấm công AI cực kỳ chính xác.',
+        avatar: 'LHN',
+      },
+    ],
+  },
+  service: {
+    hero_title: 'Dịch vụ',
+    hero_title_2: 'chuyên nghiệp',
+    hero_subtitle:
+      'Từ tư vấn, triển khai đến vận hành — chúng tôi đồng hành cùng doanh nghiệp trong toàn bộ hành trình số hoá.',
+    list_title: 'Dịch vụ của chúng tôi',
+    items: [
+      {
+        icon: '🛒',
+        name: 'Triển khai TMĐT',
+        desc: 'Xây dựng sàn thương mại điện tử từ A-Z, tích hợp đa kênh và tối ưu chuyển đổi.',
+        tags: ['B2B', 'B2C', 'Đa kênh'],
+      },
+      {
+        icon: '☕',
+        name: 'Giải pháp F&B',
+        desc: 'Hệ thống POS, đặt hàng QR, quản lý bếp và phân tích doanh thu cho chuỗi F&B.',
+        tags: ['Cà phê', 'Nhà hàng', 'Chuỗi'],
+      },
+      {
+        icon: '👥',
+        name: 'Hệ thống HRM',
+        desc: 'Quản lý toàn bộ vòng đời nhân viên — tuyển dụng, đào tạo, đánh giá và giữ chân.',
+        tags: ['Nhân sự', 'KPI', 'Bảng lương'],
+      },
+      {
+        icon: '🏪',
+        name: 'Quản lý chuỗi',
+        desc: 'Nền tảng tập trung hoá quản lý đa chi nhánh với báo cáo thời gian thực.',
+        tags: ['Chuỗi cửa hàng', 'Tồn kho', 'Báo cáo'],
+      },
+      {
+        icon: '🤖',
+        name: 'Tích hợp AI',
+        desc: 'Tích hợp AI/ML vào hệ thống hiện có — từ chatbot đến dự đoán nhu cầu.',
+        tags: ['AI', 'ML', 'Tự động hoá'],
+      },
+      {
+        icon: '📊',
+        name: 'Business Intelligence',
+        desc: 'Dashboard phân tích dữ liệu chuyên sâu, giúp ra quyết định dựa trên dữ liệu.',
+        tags: ['Dashboard', 'Analytics', 'Báo cáo'],
+      },
+    ],
+    cta_title: 'Sẵn sàng bắt đầu?',
+    cta_subtitle: 'Hãy để chúng tôi tư vấn giải pháp phù hợp nhất cho doanh nghiệp của bạn.',
+    cta_btn: 'Liên hệ tư vấn miễn phí',
+  },
+  contact: {
+    hero_title: 'Liên hệ',
+    hero_title_2: 'với chúng tôi',
+    hero_subtitle: 'Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn 24/7.',
+    form: {
+      title: 'Gửi tin nhắn',
+      name: 'Họ và tên',
+      name_placeholder: 'Nguyễn Văn A',
+      email: 'Email',
+      email_placeholder: 'example@company.com',
+      phone: 'Số điện thoại',
+      phone_placeholder: '0901 234 567',
+      company: 'Tên công ty',
+      company_placeholder: 'Công ty ABC',
+      service: 'Dịch vụ quan tâm',
+      service_placeholder: 'Chọn dịch vụ...',
+      message: 'Tin nhắn',
+      message_placeholder: 'Mô tả nhu cầu của bạn...',
+      submit: 'Gửi tin nhắn',
+      submitting: 'Đang gửi...',
+      success: '✅ Tin nhắn đã được gửi! Chúng tôi sẽ liên hệ trong 24h.',
+      services: ['KD Commerce', 'KD Café', 'KD HRM', 'KD Chain', 'Tích hợp AI', 'Tư vấn khác'],
+    },
+    info: {
+      title: 'Thông tin liên hệ',
+      address: 'Địa chỉ',
+      address_value: '123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh',
+      phone: 'Điện thoại',
+      phone_value: '+84 901 234 567',
+      email: 'Email',
+      email_value: 'hello@khoangdung.vn',
+      hours: 'Giờ làm việc',
+      hours_value: 'Thứ 2 - Thứ 6: 8:00 - 18:00',
+    },
+  },
+  footer: {
+    tagline: 'Nền tảng công nghệ thế hệ mới cho doanh nghiệp Việt.',
+    products: 'Sản phẩm',
+    company: 'Công ty',
+    legal: 'Pháp lý',
+    about: 'Về chúng tôi',
+    blog: 'Blog',
+    careers: 'Tuyển dụng',
+    privacy: 'Chính sách bảo mật',
+    terms: 'Điều khoản sử dụng',
+    copyright: '© 2026 Khoảng Dung. All rights reserved.',
+    made_in: 'Made with ❤️ in Vietnam',
+  },
+};
