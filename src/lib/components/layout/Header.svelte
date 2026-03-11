@@ -14,9 +14,11 @@
   $: nav = translations[locale].nav as Record<string, string>;
 
   const navLinks = [
-    { key: 'home', href: '/' },
-    { key: 'service', href: '/service' },
-    { key: 'contact', href: '/contact' },
+    { key: 'products', href: '/products' },
+    { key: 'consulting', href: '/consulting' },
+    { key: 'news', href: '/news' },
+    { key: 'customers', href: '/customers' },
+    { key: 'about', href: '/about' },
   ];
 
   if (typeof window !== 'undefined') {
@@ -84,13 +86,18 @@
 
         <!-- CTA Button -->
         <a
-          href="/contact"
+          href="/login"
+          class="hidden md:flex btn-outline text-sm px-4 py-2"
+        >
+          {nav.login}
+        </a>
+
+        <!-- Register Button -->
+        <a
+          href="/register"
           class="hidden md:flex btn-primary text-sm px-4 py-2"
         >
-          {nav.cta}
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
+          {nav.register}
         </a>
 
         <!-- Mobile Menu Button -->

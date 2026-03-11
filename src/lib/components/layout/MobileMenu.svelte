@@ -54,11 +54,18 @@
         <span class="ml-auto text-xs text-gray-500">→ {locale === 'vi' ? 'EN' : 'VI'}</span>
       </button>
       <a
-        href="/contact"
+        href="/login"
+        on:click={() => (open = false)}
+        class="btn-outline w-full justify-center"
+      >
+        {nav.login}
+      </a>
+      <a
+        href="/register"
         on:click={() => (open = false)}
         class="btn-primary w-full justify-center"
       >
-        {nav.cta}
+        {nav.register}
       </a>
     </div>
   </div>
