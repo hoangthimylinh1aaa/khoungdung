@@ -37,9 +37,9 @@
 </script>
 
 <svelte:head>
-  <title>Liên hệ — Khoảng Dung</title>
-  <meta name="description" content="Liên hệ với Khoảng Dung để được tư vấn giải pháp công nghệ phù hợp cho doanh nghiệp của bạn." />
-  <meta property="og:title" content="Liên hệ — Khoảng Dung" />
+  <title>Liên hệ — Kho phần mềm</title>
+  <meta name="description" content="Liên hệ với Kho phần mềm để được tư vấn giải pháp công nghệ phù hợp cho doanh nghiệp của bạn." />
+  <meta property="og:title" content="Liên hệ — Kho phần mềm" />
   <link rel="canonical" href="https://khoangdung.vn/contact" />
 </svelte:head>
 

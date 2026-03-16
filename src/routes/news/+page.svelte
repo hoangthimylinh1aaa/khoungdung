@@ -19,7 +19,7 @@
     {
       badge: 'event',
       title: 'Hội thảo Chuyển đổi số 2026',
-      excerpt: 'Khoảng Dung đồng hành cùng hơn 200 doanh nghiệp tại Hội thảo Chuyển đổi số TP. Hồ Chí Minh.',
+      excerpt: 'Kho phần mềm đồng hành cùng hơn 200 doanh nghiệp tại Hội thảo Chuyển đổi số TP. Hồ Chí Minh.',
       date: '2026-02-20',
     },
     {
@@ -36,21 +36,21 @@
     },
     {
       badge: 'event',
-      title: 'Khoảng Dung đạt Top 10 Startup Việt Nam',
+      title: 'Kho phần mềm đạt Top 10 Startup Việt Nam',
       excerpt: 'Được vinh danh trong danh sách Top 10 Startup công nghệ xuất sắc nhất Việt Nam năm 2025.',
       date: '2026-01-25',
     },
     {
       badge: 'update',
       title: 'Cập nhật bảo mật và hiệu năng Q1/2026',
-      excerpt: 'Các cải tiến bảo mật quan trọng và tối ưu hóa hiệu năng cho toàn bộ hệ sinh thái Khoảng Dung.',
+      excerpt: 'Các cải tiến bảo mật quan trọng và tối ưu hóa hiệu năng cho toàn bộ hệ sinh thái Kho phần mềm.',
       date: '2026-01-10',
     },
   ];
 </script>
 
 <svelte:head>
-  <title>{n.hero_title} {n.hero_title_2} — Khoảng Dung</title>
+  <title>{n.hero_title} {n.hero_title_2} — Kho phần mềm</title>
   <meta name="description" content={n.hero_subtitle} />
 </svelte:head>
 

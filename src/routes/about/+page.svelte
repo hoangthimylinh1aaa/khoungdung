@@ -23,7 +23,7 @@
 </script>
 
 <svelte:head>
-  <title>{a.hero_title} {a.hero_title_2} — Khoảng Dung</title>
+  <title>{a.hero_title} {a.hero_title_2} — Kho phần mềm</title>
   <meta name="description" content={a.hero_subtitle} />
 </svelte:head>
 

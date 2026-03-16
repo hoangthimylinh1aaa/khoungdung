@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-  <title>{l.title} — Khoảng Dung</title>
+  <title>{l.title} — Kho phần mềm</title>
   <meta name="description" content={l.subtitle} />
 </svelte:head>
 
@@ -24,7 +24,7 @@
   <div class="container-custom section-padding py-12 w-full max-w-md mx-auto">
     <div class="glass rounded-2xl p-8 sm:p-10">
       <div class="text-center mb-8">
-        <a href="/" class="inline-flex items-center gap-2 mb-6" aria-label="Khoảng Dung">
+        <a href="/" class="inline-flex items-center gap-2 mb-6" aria-label="Kho phần mềm">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-cyan-400 flex items-center justify-center font-bold text-dark text-sm shadow-[0_0_20px_rgba(103,219,236,0.4)]">
             Kho
           </div>
