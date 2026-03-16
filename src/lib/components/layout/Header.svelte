@@ -4,6 +4,7 @@
   import { translations } from '$lib/i18n';
   import type { Locale } from '$lib/i18n';
   import MobileMenu from './MobileMenu.svelte';
+  import logo from '$lib/assets/logo.png'
 
   let scrolled = false;
   let mobileOpen = false;
@@ -42,15 +43,8 @@
   <div class="container-custom section-padding py-0">
     <nav class="flex items-center justify-between h-16 sm:h-20" aria-label="Main navigation">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group" aria-label="Khoảng Dung - Trang chủ">
-        <div
-          class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary to-cyan-400 flex items-center justify-center font-bold text-dark text-sm sm:text-base shadow-[0_0_20px_rgba(103,219,236,0.4)] group-hover:shadow-[0_0_30px_rgba(103,219,236,0.6)] transition-all duration-300"
-        >
-          Kho
-        </div>
-        <span class="font-display font-bold text-base sm:text-lg text-white">
-          Ung <span class="text-gradient">Dung</span>
-        </span>
+      <a href="/" class="flex items-center gap-2 group" aria-label="Kho phần mềm - Trang chủ">
+        <img src={logo} alt="" class="w-36 h-20 object-contain" />
       </a>
 
       <!-- Desktop Nav -->

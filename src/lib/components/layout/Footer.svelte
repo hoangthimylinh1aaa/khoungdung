@@ -2,6 +2,7 @@
   import { localeStore } from '$lib/stores/locale';
   import { translations } from '$lib/i18n';
   import type { Locale } from '$lib/i18n';
+  import logo from '$lib/assets/logo.png';
 
   let locale: Locale = 'vi';
   localeStore.subscribe((v) => (locale = v));
@@ -22,10 +23,7 @@
       <!-- Brand -->
       <div class="lg:col-span-1">
         <a href="/static" class="flex items-center gap-2 mb-4">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-cyan-400 flex items-center justify-center font-bold text-dark text-sm">
-            KD
-          </div>
-          <span class="font-display font-bold text-white">Khoảng <span class="text-gradient">Dung</span></span>
+          <img src={logo} alt="logo" class="w-20 h-20 object-contain"  />
         </a>
         <p class="text-gray-400 text-sm leading-relaxed mb-5">{f.tagline}</p>
         <!-- Socials -->

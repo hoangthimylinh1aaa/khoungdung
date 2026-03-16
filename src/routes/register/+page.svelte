@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-  <title>{r.submit} — Khoảng Dung</title>
+  <title>{r.submit} — Kho phần mềm</title>
   <meta name="description" content={r.left_subtitle} />
 </svelte:head>
 
@@ -89,7 +89,7 @@
     <div class="w-full max-w-lg mx-auto">
       <!-- Mobile logo -->
       <div class="lg:hidden mb-8 text-center">
-        <a href="/" class="inline-flex items-center gap-2" aria-label="Khoảng Dung">
+        <a href="/" class="inline-flex items-center gap-2" aria-label="Kho phần mềm">
           <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-cyan-300 flex items-center justify-center font-bold text-dark text-xs shadow-lg">
             KD
           </div>
