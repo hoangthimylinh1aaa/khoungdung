@@ -54,7 +54,7 @@ function openTemplate(id: string) {
     aria-label={t[c.key].name}
   >
     <svelte:component this={c.icon} class="w-4 h-4" aria-hidden="true" />
-    <span>{t[c.key].name}</span>
+    <span class="hidden md:block">{t[c.key].name}</span>
   </button>
 {/each}
   </div>
@@ -63,7 +63,7 @@ function openTemplate(id: string) {
 
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
     {#each templates as tem (tem.id)}
-      <article
+      <div
         class="p-0 bg-surface rounded-md border border-white/5 cursor-pointer hover:shadow-lg overflow-hidden"
         on:click={() => openTemplate(tem.id)}
         aria-label={tem.title}
@@ -82,7 +82,7 @@ function openTemplate(id: string) {
             <p class="text-xs text-gray-400 mt-1">{tem.tag}</p>
           {/if}
         </div>
-      </article>
+      </div>
     {/each}
   </div>
 </div>
