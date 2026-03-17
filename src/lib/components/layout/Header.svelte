@@ -44,7 +44,7 @@
     <nav class="flex items-center justify-between h-16 sm:h-20" aria-label="Main navigation">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2 group" aria-label="Kho phần mềm - Trang chủ">
-        <img src={logo} alt="" class="w-36 h-20 object-contain" />
+        <img src={logo} alt="" class="w-16 sm:w-36 sm:h-20 object-contain" />
       </a>
 
       <!-- Desktop Nav -->

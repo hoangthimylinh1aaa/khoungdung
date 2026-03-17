@@ -25,7 +25,8 @@ export default defineConfig(
 			'no-undef': 'off',
 			'svelte/no-navigation-without-resolve': 'off',
 			'svelte/no-immutable-reactive-statements': 'off',
-			'@typescript-eslint/no-explicit-any': 'off'
+			'@typescript-eslint/no-explicit-any': 'off',
+			'svelte/no-object-in-text-mustaches': 'off'
 		}
 	},
 	{

@@ -1,4 +1,15 @@
+import carTemplate from '$lib/assets/templates/car.png';
+import spaTemplate from '$lib/assets/templates/spa.png';
+import restaurantTemplate from '$lib/assets/templates/restaurant.png';
+
 export const vi = {
+	templates: {
+		preview_label: 'Xem trước',
+		device_mobile: 'Di động',
+		device_tablet: 'Tablet',
+		device_desktop: 'Desktop',
+		use_template: 'Sử dụng mẫu này'
+	},
 	nav: {
 		home: 'Trang chủ',
 		products: 'Sản phẩm',
@@ -43,9 +54,9 @@ export const vi = {
 				'Thu lead & phân tích'
 			],
 			examples: [
-				{ id: 'car_dealer', title: 'Website bán xe' },
-				{ id: 'spa', title: 'Website spa & salon' },
-				{ id: 'restaurant', title: 'Website nhà hàng & đặt bàn' }
+				{ id: 'car_dealer', title: 'Website bán xe', image: carTemplate },
+				{ id: 'spa', title: 'Website spa & salon', image: spaTemplate },
+				{ id: 'restaurant', title: 'Website nhà hàng & đặt bàn', image: restaurantTemplate }
 			]
 		},
 

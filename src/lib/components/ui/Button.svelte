@@ -35,7 +35,7 @@
     {type}
     {disabled}
     on:click
-    class="inline-flex items-center gap-2 {sizeClasses[size]} {variantClasses[variant]} {$$props.class ?? ''}"
+    class="inline-flex cursor-pointer items-center gap-2 {sizeClasses[size]} {variantClasses[variant]} {$$props.class ?? ''}"
     class:opacity-50={disabled}
   >
     <slot />

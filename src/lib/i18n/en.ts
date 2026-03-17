@@ -1,4 +1,15 @@
+import carTemplate from '$lib/assets/templates/car.png';
+import spaTemplate from '$lib/assets/templates/spa.png';
+import restaurantTemplate from '$lib/assets/templates/restaurant.png';
+
 export const en = {
+	templates: {
+		preview_label: 'Preview',
+		device_mobile: 'Mobile',
+		device_tablet: 'Tablet',
+		device_desktop: 'Desktop',
+		use_template: 'Use this template'
+	},
 	nav: {
 		home: 'Home',
 		products: 'Products',
@@ -43,9 +54,9 @@ export const en = {
 				'Lead capture & analytics'
 			],
 			examples: [
-				{ id: 'car_dealer', title: 'Car dealer website' },
-				{ id: 'spa', title: 'Spa & salon website' },
-				{ id: 'restaurant', title: 'Restaurant & booking site' }
+				{ id: 'car_dealer', title: 'Car dealer website', image: carTemplate },
+				{ id: 'spa', title: 'Spa & salon website', image: spaTemplate },
+				{ id: 'restaurant', title: 'Restaurant & booking site', image: restaurantTemplate }
 			]
 		},
 
