@@ -3,8 +3,7 @@
   import { onMount } from 'svelte';
   import Button from '$lib/components/ui/Button.svelte';
   import { goto } from '$app/navigation';
-
-    import { localeStore } from '$lib/stores/locale';
+  import { localeStore } from '$lib/stores/locale';
   import { translations } from '$lib/i18n';
   import type { Locale } from '$lib/i18n';
 
@@ -12,14 +11,14 @@
   localeStore.subscribe((v) => (locale = v));
 
   $: t = translations[locale].templates.colorCustomizer;
-  export let primaryColor: string = '#D97941'; // burnt orange
-  export let secondaryColor: string = '#FFFFF0'; // ivory white
+
+  export let primaryColor: string = '#1F4E79'; // modern real-estate blue
+  export let secondaryColor: string = '#F7F5F2'; // warm neutral background
 
   let selectedPrimary = primaryColor;
   let selectedSecondary = secondaryColor;
 
   let deviceView: 'mobile' | 'tablet' | 'desktop' = 'desktop';
-
   let isMobileLayout = false;
   let showColorPanel = false;
 
@@ -37,8 +36,8 @@
   $: secondaryColor = selectedSecondary;
 
   function resetColors() {
-    selectedPrimary = '#D97941';
-    selectedSecondary = '#FFFFF0';
+    selectedPrimary = '#1F4E79';
+    selectedSecondary = '#F7F5F2';
   }
 
   function checkScreenSize() {
@@ -68,71 +67,70 @@
     return () => window.removeEventListener('resize', checkScreenSize);
   });
 
-  // Danh sách món ăn nổi bật
-  const dishes = [
+  const properties = [
     {
       id: 1,
-      name: 'Bò Beefsteak Úc Cao Cấp',
-      price: '450.000',
-      image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80',
-      category: 'Main Course',
-      description: 'Thịt bò Úc thượng hạng'
+      name: 'Luxury Penthouse in Downtown',
+      price: '$1,250,000',
+      image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80',
+      type: 'Penthouse',
+      description: 'Skyline views with premium interior finishes'
     },
     {
       id: 2,
-      name: 'Tôm Hùm Alaska Nướng Bơ',
-      price: '850.000',
-      image: 'https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=800&q=80',
-      category: 'Seafood',
-      description: 'Tươi sống mỗi ngày'
+      name: 'Modern Family Villa',
+      price: '$890,000',
+      image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80',
+      type: 'Villa',
+      description: 'Private garden, pool, and spacious living areas'
     },
     {
       id: 3,
-      name: 'Sushi & Sashimi Omakase',
-      price: '680.000',
-      image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&q=80',
-      category: 'Japanese',
-      description: 'Set Chef đặc biệt'
+      name: 'Minimalist City Apartment',
+      price: '$420,000',
+      image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80',
+      type: 'Apartment',
+      description: 'Ideal for young professionals in the city center'
     },
     {
       id: 4,
-      name: 'Pasta Truffle Ý Truyền Thống',
-      price: '380.000',
-      image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80',
-      category: 'Italian',
-      description: 'Nấm truffle nhập khẩu'
+      name: 'Waterfront Residence',
+      price: '$1,480,000',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
+      type: 'Residence',
+      description: 'Exclusive waterfront home with private terrace'
     },
     {
       id: 5,
-      name: 'Cá Hồi Na Uy Sốt Chanh Dây',
-      price: '420.000',
-      image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80',
-      category: 'Seafood',
-      description: 'Phi lê cá hồi tươi'
+      name: 'Elegant Townhouse',
+      price: '$670,000',
+      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80',
+      type: 'Townhouse',
+      description: 'Stylish design in a quiet, upscale neighborhood'
     },
     {
       id: 6,
-      name: 'Lẩu Hải Sản Cao Cấp',
-      price: '950.000',
-      image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80',
-      category: 'Hot Pot',
-      description: 'Combo 2-3 người'
+      name: 'Smart Home Suburban Estate',
+      price: '$980,000',
+      image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80',
+      type: 'Estate',
+      description: 'Smart automation, security, and open green space'
     }
   ];
 
   const onNavigateContact = () => goto('/contact');
 </script>
 
-<div class="flex flex-col lg:flex-row min-h-screen bg-gray-950">
-  <div class="flex-1 py-20 lg:py-24 px-4 lg:px-8 overflow-y-auto bg-gray-900">
+<div class="flex flex-col lg:flex-row min-h-screen bg-slate-950">
+  <div class="flex-1 py-20 lg:py-24 px-4 lg:px-8 overflow-y-auto bg-slate-900">
 
     <!-- Device Switcher -->
     <div class="mb-6 flex justify-center">
-      <div class="inline-flex items-center gap-1 sm:gap-2 bg-gray-800 p-1.5 sm:p-2 rounded-lg">
+      <div class="inline-flex items-center gap-1 sm:gap-2 bg-slate-800 p-1.5 sm:p-2 rounded-lg">
         <button
           on:click={() => setDevice('mobile')}
           class="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-md transition-all duration-200"
-          style="background-color: {deviceView === 'mobile' ? primaryColor : 'transparent'}; color: {deviceView === 'mobile' ? 'white' : '#9ca3af'}"
+          style="background-color: {deviceView === 'mobile' ? primaryColor : 'transparent'}; color: {deviceView === 'mobile' ? 'white' : '#94a3b8'}"
         >
           <Smartphone size={16} class="sm:w-[18px] sm:h-[18px]" />
           <span class="text-xs sm:text-sm font-medium">Mobile</span>
@@ -141,7 +139,7 @@
         <button
           on:click={() => setDevice('tablet')}
           class="hidden sm:flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-md transition-all duration-200"
-          style="background-color: {deviceView === 'tablet' ? primaryColor : 'transparent'}; color: {deviceView === 'tablet' ? 'white' : '#9ca3af'}"
+          style="background-color: {deviceView === 'tablet' ? primaryColor : 'transparent'}; color: {deviceView === 'tablet' ? 'white' : '#94a3b8'}"
         >
           <Tablet size={16} class="sm:w-[18px] sm:h-[18px]" />
           <span class="text-xs sm:text-sm font-medium">Tablet</span>
@@ -150,7 +148,7 @@
         <button
           on:click={() => setDevice('desktop')}
           class="hidden xl:flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-md transition-all duration-200"
-          style="background-color: {deviceView === 'desktop' ? primaryColor : 'transparent'}; color: {deviceView === 'desktop' ? 'white' : '#9ca3af'}"
+          style="background-color: {deviceView === 'desktop' ? primaryColor : 'transparent'}; color: {deviceView === 'desktop' ? 'white' : '#94a3b8'}"
         >
           <Monitor size={16} class="sm:w-[18px] sm:h-[18px]" />
           <span class="text-xs sm:text-sm font-medium">Desktop</span>
@@ -170,28 +168,28 @@
           <header class="backdrop-blur-sm bg-white/95 shadow-sm sticky top-0 z-10">
             <div class="px-4 sm:px-6">
               <div class="flex justify-between items-center py-3 sm:py-4">
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-3">
                   <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="sm:w-10 sm:h-10">
                     <rect width="40" height="40" rx="8" fill={primaryColor}/>
-                    <path d="M20 10L24 18H16L20 10Z" fill="white"/>
-                    <circle cx="20" cy="25" r="3" fill="white"/>
-                    <path d="M13 30H27" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M10 24L20 12L30 24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 24V30H26V24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <div>
-                    <div class="text-lg sm:text-xl font-bold" style="color: {primaryColor};">La Cuisine</div>
-                    <div class="text-[8px] sm:text-[10px] text-gray-500 tracking-widest">FINE DINING</div>
+                    <div class="text-lg sm:text-xl font-bold" style="color: {primaryColor};">UrbanNest Realty</div>
+                    <div class="text-[8px] sm:text-[10px] text-gray-500 tracking-[0.25em] uppercase">Modern Living</div>
                   </div>
                 </div>
+
                 {#if deviceView === 'desktop'}
                   <nav class="hidden md:flex gap-4 lg:gap-8 items-center">
-                    <span class="text-gray-700 text-xs lg:text-sm cursor-pointer font-medium hover:opacity-70 transition-opacity">Trang chủ</span>
-                    <span class="text-gray-700 text-xs lg:text-sm cursor-pointer font-medium hover:opacity-70 transition-opacity">Thực đơn</span>
-                    <span class="text-gray-700 text-xs lg:text-sm cursor-pointer font-medium hover:opacity-70 transition-opacity">Về chúng tôi</span>
+                    <span class="text-gray-700 text-xs lg:text-sm cursor-pointer font-medium hover:opacity-70 transition-opacity">Home</span>
+                    <span class="text-gray-700 text-xs lg:text-sm cursor-pointer font-medium hover:opacity-70 transition-opacity">Properties</span>
+                    <span class="text-gray-700 text-xs lg:text-sm cursor-pointer font-medium hover:opacity-70 transition-opacity">About</span>
                     <button
                       class="text-xs lg:text-sm px-5 py-2.5 rounded-md text-white font-semibold hover:opacity-90 transition-all shadow-md"
                       style="background-color: {primaryColor};"
                     >
-                      Đặt bàn ngay
+                      Book a Viewing
                     </button>
                   </nav>
                 {/if}
@@ -208,12 +206,13 @@
           >
             <div class="absolute inset-0">
               <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
-                alt="Restaurant Background"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80"
+                alt="Real Estate Background"
                 class="w-full h-full object-cover"
               />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
+              <div class="absolute inset-0 bg-gradient-to-r from-black/65 to-black/30"></div>
             </div>
+
             <div class="relative z-10 w-full px-4 sm:px-6">
               <div class="max-w-2xl">
                 <h1
@@ -222,7 +221,7 @@
                   class:text-4xl={deviceView === 'tablet'}
                   class:text-5xl={deviceView === 'desktop'}
                 >
-                  Hương Vị Đỉnh Cao
+                  Find Your Future Home
                 </h1>
                 <p
                   class="mb-4 sm:mb-6 text-white/90"
@@ -230,7 +229,7 @@
                   class:text-sm={deviceView === 'tablet'}
                   class:text-base={deviceView === 'desktop'}
                 >
-                  Trải nghiệm ẩm thực tinh tế từ khắp năm châu
+                  Discover premium properties designed for modern lifestyles and long-term value.
                 </p>
                 <button
                   class="font-semibold rounded-md shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5"
@@ -242,13 +241,13 @@
                   class:py-3={deviceView !== 'mobile'}
                   style="background-color: {primaryColor}; color: white;"
                 >
-                  Xem thực đơn
+                  Explore Listings
                 </button>
               </div>
             </div>
           </section>
 
-          <!-- Menu Section -->
+          <!-- Featured Properties -->
           <section
             class:py-8={deviceView === 'mobile'}
             class:py-12={deviceView === 'tablet'}
@@ -263,9 +262,9 @@
                   class:text-4xl={deviceView === 'desktop'}
                   style="color: {primaryColor};"
                 >
-                  Món Ăn Đặc Sắc
+                  Featured Properties
                 </h2>
-                <p class="text-gray-600 text-xs sm:text-sm">Được chọn lọc bởi đầu bếp hàng đầu</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Handpicked homes in prime locations</p>
               </div>
 
               <div
@@ -274,30 +273,35 @@
                 class:grid-cols-2={deviceView === 'tablet'}
                 class:grid-cols-3={deviceView === 'desktop'}
               >
-                {#each dishes.slice(0, deviceView === 'mobile' ? 3 : 6) as dish (dish.id)}
+                {#each properties.slice(0, deviceView === 'mobile' ? 3 : 6) as property (property.id)}
                   <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100">
                     <div class="relative h-44 sm:h-52 overflow-hidden">
                       <img
-                        src={dish.image}
-                        alt={dish.name}
+                        src={property.image}
+                        alt={property.name}
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div
                         class="absolute top-3 right-3 px-3 py-1 rounded-md text-white text-xs font-medium backdrop-blur-sm shadow-lg"
                         style="background-color: {primaryColor};"
                       >
-                        {dish.category}
+                        {property.type}
                       </div>
                     </div>
+
                     <div class="p-4 sm:p-5">
                       <h3
                         class="font-semibold text-gray-800 mb-2 line-clamp-2"
                         class:text-sm={deviceView === 'mobile'}
                         class:text-base={deviceView !== 'mobile'}
                       >
-                        {dish.name}
+                        {property.name}
                       </h3>
-                      <p class="text-gray-500 text-[10px] sm:text-xs mb-3 line-clamp-1">{dish.description}</p>
+
+                      <p class="text-gray-500 text-[10px] sm:text-xs mb-3 line-clamp-1">
+                        {property.description}
+                      </p>
+
                       <div class="flex justify-between items-center">
                         <div>
                           <span
@@ -306,9 +310,10 @@
                             class:text-xl={deviceView !== 'mobile'}
                             style="color: {primaryColor};"
                           >
-                            {dish.price}đ
+                            {property.price}
                           </span>
                         </div>
+
                         <button
                           class="rounded-md font-semibold hover:opacity-90 transition-all shadow-md"
                           class:text-[10px]={deviceView === 'mobile'}
@@ -319,7 +324,7 @@
                           class:py-2={deviceView !== 'mobile'}
                           style="background-color: {primaryColor}; color: white;"
                         >
-                          Đặt món
+                          View Details
                         </button>
                       </div>
                     </div>
@@ -329,10 +334,10 @@
             </div>
           </section>
 
-          <!-- Why Choose Us Section -->
+          <!-- Why Choose Us -->
           <section
             class="py-8 sm:py-12"
-            style="background: linear-gradient(135deg, {primaryColor}10 0%, {secondaryColor} 100%);"
+            style="background: linear-gradient(135deg, {primaryColor}12 0%, {secondaryColor} 100%);"
             class:px-4={deviceView === 'mobile'}
             class:px-6={deviceView !== 'mobile'}
           >
@@ -345,36 +350,40 @@
                 <div class="text-center">
                   <div class="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 rounded-full flex items-center justify-center shadow-lg" style="background-color: {primaryColor};">
                     <svg class="w-7 h-7 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-10.5z"/>
                     </svg>
                   </div>
-                  <h3 class="font-bold text-sm sm:text-base mb-1 sm:mb-2" style="color: {primaryColor};">Chef Chuyên Nghiệp</h3>
-                  <p class="text-gray-600 text-xs sm:text-sm">Đội ngũ đầu bếp giàu kinh nghiệm</p>
+                  <h3 class="font-bold text-sm sm:text-base mb-1 sm:mb-2" style="color: {primaryColor};">Curated Listings</h3>
+                  <p class="text-gray-600 text-xs sm:text-sm">Only quality properties with strong market value</p>
                 </div>
+
                 <div class="text-center">
                   <div class="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 rounded-full flex items-center justify-center shadow-lg" style="background-color: {primaryColor};">
                     <svg class="w-7 h-7 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
                     </svg>
                   </div>
-                  <h3 class="font-bold text-sm sm:text-base mb-1 sm:mb-2" style="color: {primaryColor};">Nguyên Liệu Tươi Sống</h3>
-                  <p class="text-gray-600 text-xs sm:text-sm">Nhập khẩu trực tiếp hàng ngày</p>
+                  <h3 class="font-bold text-sm sm:text-base mb-1 sm:mb-2" style="color: {primaryColor};">Transparent Process</h3>
+                  <p class="text-gray-600 text-xs sm:text-sm">Clear pricing, trusted advice, and full support</p>
                 </div>
+
                 <div class="text-center">
                   <div class="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 rounded-full flex items-center justify-center shadow-lg" style="background-color: {primaryColor};">
                     <svg class="w-7 h-7 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/>
+                      <circle cx="12" cy="12" r="9" stroke-width="2"/>
                     </svg>
                   </div>
-                  <h3 class="font-bold text-sm sm:text-base mb-1 sm:mb-2" style="color: {primaryColor};">Phục Vụ Tận Tâm</h3>
-                  <p class="text-gray-600 text-xs sm:text-sm">Đội ngũ nhân viên chuyên nghiệp</p>
+                  <h3 class="font-bold text-sm sm:text-base mb-1 sm:mb-2" style="color: {primaryColor};">Fast Response</h3>
+                  <p class="text-gray-600 text-xs sm:text-sm">Quick consultation and viewing appointments</p>
                 </div>
               </div>
             </div>
           </section>
 
           <!-- Footer -->
-          <footer class="bg-gray-900 text-white py-6 sm:py-10">
+          <footer class="bg-slate-900 text-white py-6 sm:py-10">
             <div class="px-4 sm:px-6 max-w-7xl mx-auto">
               <div
                 class="grid gap-6 sm:gap-8 mb-6 sm:mb-8"
@@ -382,47 +391,48 @@
                 class:grid-cols-4={deviceView !== 'mobile'}
               >
                 <div class:col-span-2={deviceView !== 'mobile'}>
-                  <div class="flex items-center gap-2 mb-3">
+                  <div class="flex items-center gap-3 mb-3">
                     <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect width="40" height="40" rx="8" fill={primaryColor}/>
-                      <path d="M20 10L24 18H16L20 10Z" fill="white"/>
-                      <circle cx="20" cy="25" r="3" fill="white"/>
-                      <path d="M13 30H27" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M10 24L20 12L30 24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14 24V30H26V24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     <div>
-                      <div class="text-lg sm:text-xl font-bold" style="color: {primaryColor};">La Cuisine</div>
-                      <div class="text-[8px] text-gray-400 tracking-widest">FINE DINING</div>
+                      <div class="text-lg sm:text-xl font-bold" style="color: {primaryColor};">UrbanNest Realty</div>
+                      <div class="text-[8px] text-gray-400 tracking-[0.25em] uppercase">Modern Living</div>
                     </div>
                   </div>
                   <p class="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-sm">
-                    Nhà hàng cao cấp mang đến trải nghiệm ẩm thực đẳng cấp quốc tế với không gian sang trọng.
+                    We help clients discover refined spaces, smart investments, and homes built for the future.
                   </p>
                 </div>
+
                 <div>
-                  <h4 class="font-semibold text-sm sm:text-base mb-2 sm:mb-3" style="color: {primaryColor};">Liên kết</h4>
+                  <h4 class="font-semibold text-sm sm:text-base mb-2 sm:mb-3" style="color: {primaryColor};">Quick Links</h4>
                   <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm">
-                    <li><span class="text-gray-300 cursor-pointer hover:text-white transition-colors">Về chúng tôi</span></li>
-                    <li><span class="text-gray-300 cursor-pointer hover:text-white transition-colors">Thực đơn</span></li>
-                    <li><span class="text-gray-300 cursor-pointer hover:text-white transition-colors">Đặt bàn</span></li>
-                    <li><span class="text-gray-300 cursor-pointer hover:text-white transition-colors">Liên hệ</span></li>
+                    <li><span class="text-gray-300 cursor-pointer hover:text-white transition-colors">About Us</span></li>
+                    <li><span class="text-gray-300 cursor-pointer hover:text-white transition-colors">Listings</span></li>
+                    <li><span class="text-gray-300 cursor-pointer hover:text-white transition-colors">Schedule a Tour</span></li>
+                    <li><span class="text-gray-300 cursor-pointer hover:text-white transition-colors">Contact</span></li>
                   </ul>
                 </div>
+
                 <div>
-                  <h4 class="font-semibold text-sm sm:text-base mb-2 sm:mb-3" style="color: {primaryColor};">Thông tin</h4>
+                  <h4 class="font-semibold text-sm sm:text-base mb-2 sm:mb-3" style="color: {primaryColor};">Contact</h4>
                   <ul class="space-y-1 sm:space-y-2 text-gray-300 text-xs sm:text-sm">
-                    <li>📞 028 1234 5678</li>
-                    <li>📧 info@lacuisine.vn</li>
-                    <li>📍 45 Đồng Khởi, Q.1, TP.HCM</li>
-                    <li>🕐 11:00 - 23:00 hàng ngày</li>
+                    <li>📞 +1 (555) 123-4567</li>
+                    <li>📧 hello@urbannest.com</li>
+                    <li>📍 128 Park Avenue, New York, NY</li>
+                    <li>🕐 Mon - Sat, 9:00 AM - 7:00 PM</li>
                   </ul>
                 </div>
               </div>
-              <div class="border-t border-gray-700 pt-4 sm:pt-6 text-center">
-                <p class="text-gray-400 text-[10px] sm:text-xs">&copy; 2024 La Cuisine Restaurant. All rights reserved.</p>
+
+              <div class="border-t border-slate-700 pt-4 sm:pt-6 text-center">
+                <p class="text-gray-400 text-[10px] sm:text-xs">&copy; 2026 UrbanNest Realty. All rights reserved.</p>
               </div>
             </div>
           </footer>
-
         </div>
       </div>
     </div>
@@ -456,7 +466,7 @@
     {/if}
 
     <div
-      class="relative h-full bg-gray-900 overflow-y-auto ml-auto max-w-md lg:max-w-none py-8 lg:py-24 px-4 sm:px-6 lg:px-8"
+      class="relative h-full bg-slate-900 overflow-y-auto ml-auto max-w-md lg:max-w-none py-8 lg:py-24 px-4 sm:px-6 lg:px-8"
     >
       {#if isMobileLayout}
         <button
@@ -467,7 +477,7 @@
         </button>
       {/if}
 
-      <h2 class="text-xl sm:text-2xl font-bold text-white text-center mb-6 sm:mb-8">
+    <h2 class="text-xl sm:text-2xl font-bold text-white text-center mb-6 sm:mb-8">
           🎨 {t.title}
       </h2>
 
@@ -563,7 +573,7 @@
   }
 
   :global(.overflow-y-auto::-webkit-scrollbar-thumb) {
-    background: #4b5563;
+    background: #475569;
     border-radius: 3px;
   }
 </style>

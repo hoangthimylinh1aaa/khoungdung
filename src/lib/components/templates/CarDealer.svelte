@@ -3,23 +3,26 @@
   import { onMount } from 'svelte';
   import Button from '$lib/components/ui/Button.svelte';
   import { goto } from '$app/navigation';
+  import { localeStore } from '$lib/stores/locale';
+  import { translations } from '$lib/i18n';
+  import type { Locale } from '$lib/i18n';
 
-  // Props với màu mặc định
-  export let primaryColor: string = '#ff9966'; // cam nhạt
-  export let secondaryColor: string = '#ffffff'; // trắng
+  let locale: Locale = 'vi';
+  localeStore.subscribe((v) => (locale = v));
 
-  // State cho color picker
+  $: t = translations[locale].templates.colorCustomizer;
+
+  export let primaryColor: string = '#ff9966';
+  export let secondaryColor: string = '#ffffff';
+
   let selectedPrimary = primaryColor;
   let selectedSecondary = secondaryColor;
 
-  // State cho device view
   let deviceView: 'mobile' | 'tablet' | 'desktop' = 'desktop';
 
-  // Responsive state
   let isMobileLayout = false;
   let showColorPanel = false;
 
-  // Device width mapping
   const deviceWidths = {
     mobile: '375px',
     tablet: '768px',
@@ -401,12 +404,14 @@
         </button>
       {/if}
 
-      <h2 class="text-xl sm:text-2xl font-bold text-white text-center mb-6 sm:mb-8">🎨 Tùy chỉnh màu sắc</h2>
+      <h2 class="text-xl sm:text-2xl font-bold text-white text-center mb-6 sm:mb-8">
+          🎨 {t.title}
+      </h2>
 
       <div class="space-y-6 sm:space-y-8">
         <div class="bg-gray-800 p-4 sm:p-6 rounded-xl">
           <label for="primary-color" class="flex justify-between items-center mb-3 sm:mb-4 text-gray-200 text-sm sm:text-base font-semibold">
-            <span>Màu chính (Primary)</span>
+            <span>{t.primary}</span>
             <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg border-2 border-gray-700" style="background-color: {selectedPrimary};"></span>
           </label>
           <input
@@ -425,7 +430,7 @@
 
         <div class="bg-gray-800 p-4 sm:p-6 rounded-xl">
           <label for="secondary-color" class="flex justify-between items-center mb-3 sm:mb-4 text-gray-200 text-sm sm:text-base font-semibold">
-            <span>Màu phụ (Secondary)</span>
+            <span>{t.secondary}</span>
             <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg border-2 border-gray-700" style="background-color: {selectedSecondary};"></span>
           </label>
           <input
@@ -446,22 +451,22 @@
       <Button
         on:click={resetColors}
         class="w-full mt-6 flex items-center justify-center">
-        🔄 Reset về mặc định
+        🔄 {t.reset}
       </Button>
 
       <div class="mt-6 sm:mt-8 bg-gray-800 p-4 sm:p-6 rounded-xl border-l-4" style="border-color: {primaryColor};">
-        <h3 class="text-white font-bold mb-3 sm:mb-4 text-base sm:text-lg">💡 Hướng dẫn:</h3>
+        <h3 class="text-white font-bold mb-3 sm:mb-4 text-base sm:text-lg">💡 {t.instructions}:</h3>
         <ul class="text-gray-400 space-y-1.5 sm:space-y-2 text-xs sm:text-sm leading-relaxed">
-          <li>• Chọn màu chính cho logo, nút bấm và điểm nhấn</li>
-          <li>• Chọn màu phụ cho nền và các phần tử phụ</li>
-          <li>• Xem trước ngay lập tức ở bên trái</li>
+          <li>• {t.primary_help}</li>
+          <li>• {t.secondary_help}</li>
+          <li>• {t.live_preview}</li>
         </ul>
       </div>
 
       <Button
         on:click={onNavigateContact}
         class="w-full mt-6 flex items-center justify-center">
-        Dùng mẫu này
+        {t.use_template}
       </Button>
     </div>
   </div>

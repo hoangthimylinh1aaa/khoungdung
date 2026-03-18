@@ -1,6 +1,8 @@
 import carTemplate from '$lib/assets/templates/car.png';
 import spaTemplate from '$lib/assets/templates/spa.png';
 import restaurantTemplate from '$lib/assets/templates/restaurant.png';
+import landTemplate from '$lib/assets/templates/land.png';
+import plantTemplate from '$lib/assets/templates/plant.png';
 
 export const en = {
 	templates: {
@@ -8,7 +10,18 @@ export const en = {
 		device_mobile: 'Mobile',
 		device_tablet: 'Tablet',
 		device_desktop: 'Desktop',
+		use_template: 'Use this template',
+		colorCustomizer: {
+		title: 'Customize Colors',
+		primary: 'Primary Color',
+			instructions:'instructions',
+		secondary: 'Secondary Color',
+		reset: 'Reset to Default',
+		primary_help: 'Choose the primary color for the logo, buttons, and highlights',
+		secondary_help: 'Choose the secondary color for backgrounds and supporting elements',
+		live_preview: 'Preview instantly on the left',
 		use_template: 'Use this template'
+	}
 	},
 	nav: {
 		home: 'Home',
@@ -56,7 +69,9 @@ export const en = {
 			examples: [
 				{ id: 'car_dealer', title: 'Car dealer website', image: carTemplate },
 				{ id: 'spa', title: 'Spa & salon website', image: spaTemplate },
-				{ id: 'restaurant', title: 'Restaurant & booking site', image: restaurantTemplate }
+				{ id: 'restaurant', title: 'Restaurant & booking site', image: restaurantTemplate },
+				{ id: 'land', title: 'Real estate', image: landTemplate },
+				{ id: 'plants', title: 'Medicinal plants', image: plantTemplate }
 			]
 		},
 
@@ -283,7 +298,35 @@ export const en = {
 		hero_title: 'Our',
 		hero_title_2: 'Products',
 		hero_subtitle: 'A comprehensive AI-integrated technology ecosystem for Vietnamese businesses.',
-		cta: 'Get in touch'
+		cta: 'Get in touch',
+		dataSupport: {
+			title: 'Data migration & import support',
+			subtitle:
+				'We support importing data from multiple sources: products, customers, orders and transaction history — securely and accurately.',
+			bullets: [
+				'Import SKUs & product categories',
+				'Migrate customers & order history',
+				'CSV/Excel integration',
+				'Data validation & security'
+			],
+			button: 'Request support',
+			learn_more: 'Learn more',
+			learn_more_href: '/docs/data-migration'
+		}
+	},
+	dataSupport: {
+		title: 'Data migration & import support',
+		subtitle:
+			'We help import data from multiple systems: products, customers, orders and transactional history — securely and accurately.',
+		bullets: [
+			'Import SKUs & product categories',
+			'Migrate customers & order history',
+			'CSV/Excel integration',
+			'Data validation & security'
+		],
+		button: 'Request support',
+		learn_more: 'Learn more',
+		learn_more_href: '/docs/data-migration'
 	},
 	consultingPage: {
 		hero_title: 'Consulting &',

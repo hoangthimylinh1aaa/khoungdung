@@ -5,6 +5,7 @@
   import Products from '$lib/components/home/Products.svelte';
   import ProductsHero from '$lib/components/home/ProductsHero.svelte';
   import ProductTemplates from '$lib/components/home/ProductTemplates.svelte';
+  import DataSupportPromo from '$lib/components/home/DataSupportPromo.svelte';
 
   let locale: Locale = 'vi';
   localeStore.subscribe((v) => (locale = v));
@@ -20,6 +21,9 @@
 
 <!-- Templates / filter -->
 <ProductTemplates />
+
+<!-- Data support promo section -->
+<DataSupportPromo />
 
 
 <!-- CTA -->
