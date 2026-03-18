@@ -1,6 +1,8 @@
 import carTemplate from '$lib/assets/templates/car.png';
 import spaTemplate from '$lib/assets/templates/spa.png';
 import restaurantTemplate from '$lib/assets/templates/restaurant.png';
+import landTemplate from '$lib/assets/templates/land.png';
+import plantTemplate from '$lib/assets/templates/plant.png';
 
 export const vi = {
 	templates: {
@@ -8,7 +10,18 @@ export const vi = {
 		device_mobile: 'Di động',
 		device_tablet: 'Tablet',
 		device_desktop: 'Desktop',
-		use_template: 'Sử dụng mẫu này'
+		use_template: 'Sử dụng mẫu này',
+		colorCustomizer: {
+		title: 'Tùy chỉnh màu sắc',
+		primary: 'Màu chính (Primary)',
+		secondary: 'Màu phụ (Secondary)',
+		reset: 'Reset về mặc định',
+    instructions:'Hướng dẫn',
+		primary_help: 'Chọn màu chính cho logo, nút bấm và điểm nhấn',
+		secondary_help: 'Chọn màu phụ cho nền và các phần tử phụ',
+		live_preview: 'Xem trước ngay lập tức ở bên trái',
+		use_template: 'Dùng mẫu này'
+	}
 	},
 	nav: {
 		home: 'Trang chủ',
@@ -56,7 +69,9 @@ export const vi = {
 			examples: [
 				{ id: 'car_dealer', title: 'Website bán xe', image: carTemplate },
 				{ id: 'spa', title: 'Website spa & salon', image: spaTemplate },
-				{ id: 'restaurant', title: 'Website nhà hàng & đặt bàn', image: restaurantTemplate }
+				{ id: 'restaurant', title: 'Website nhà hàng & đặt bàn', image: restaurantTemplate },
+				{ id: 'land', title: 'Website bất động sản', image: landTemplate },
+				{ id: 'plants', title: 'Cây thuốc quý', image: plantTemplate }
 			]
 		},
 
@@ -276,7 +291,29 @@ export const vi = {
 		hero_title: 'Sản phẩm',
 		hero_title_2: 'của chúng tôi',
 		hero_subtitle: 'Hệ sinh thái công nghệ tích hợp AI toàn diện cho doanh nghiệp Việt Nam.',
-		cta: 'Liên hệ tư vấn'
+		cta: 'Liên hệ tư vấn',
+		promo: {
+			title: 'Khởi động giải pháp số cho doanh nghiệp',
+			subtitle:
+				'Tư vấn chuyên sâu, demo thực tế và lộ trình triển khai nhanh chóng — phù hợp với ngành bán xe, spa, nhà hàng và thiết bị y tế.',
+			button: 'Nhận tư vấn miễn phí',
+			secondary: 'Xem demo',
+			secondary_href: '/demo'
+		},
+		dataSupport: {
+			title: 'Hỗ trợ chuyển đổi & di chuyển dữ liệu',
+			subtitle:
+				'Chúng tôi hỗ trợ nhập dữ liệu từ nhiều hệ thống: sản phẩm, khách hàng, đơn hàng và lịch sử giao dịch — an toàn và chính xác.',
+			bullets: [
+				'Nhập SKU & danh mục sản phẩm',
+				'Di chuyển khách hàng & lịch sử đơn hàng',
+				'Tích hợp dữ liệu từ CSV/Excel',
+				'Bảo mật & kiểm tra chất lượng dữ liệu'
+			],
+			button: 'Yêu cầu hỗ trợ',
+			learn_more: 'Tìm hiểu thêm',
+			learn_more_href: '/docs/data-migration'
+		}
 	},
 	consultingPage: {
 		hero_title: 'Tư vấn &',

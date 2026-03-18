@@ -42,6 +42,7 @@
 		"vitest-browser-svelte": "^2.0.2"
 	},
 	"dependencies": {
+		"@lottiefiles/dotlottie-svelte": "^0.9.8",
 		"@lucide/svelte": "^0.577.0",
 		"add": "^2.0.6",
 		"i18next": "^25.8.15",
