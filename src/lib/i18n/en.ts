@@ -12,16 +12,16 @@ export const en = {
 		device_desktop: 'Desktop',
 		use_template: 'Use this template',
 		colorCustomizer: {
-		title: 'Customize Colors',
-		primary: 'Primary Color',
-			instructions:'instructions',
-		secondary: 'Secondary Color',
-		reset: 'Reset to Default',
-		primary_help: 'Choose the primary color for the logo, buttons, and highlights',
-		secondary_help: 'Choose the secondary color for backgrounds and supporting elements',
-		live_preview: 'Preview instantly on the left',
-		use_template: 'Use this template'
-	}
+			title: 'Customize Colors',
+			primary: 'Primary Color',
+			instructions: 'instructions',
+			secondary: 'Secondary Color',
+			reset: 'Reset to Default',
+			primary_help: 'Choose the primary color for the logo, buttons, and highlights',
+			secondary_help: 'Choose the secondary color for backgrounds and supporting elements',
+			live_preview: 'Preview instantly on the left',
+			use_template: 'Use this template'
+		}
 	},
 	nav: {
 		home: 'Home',

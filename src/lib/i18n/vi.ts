@@ -12,16 +12,16 @@ export const vi = {
 		device_desktop: 'Desktop',
 		use_template: 'Sử dụng mẫu này',
 		colorCustomizer: {
-		title: 'Tùy chỉnh màu sắc',
-		primary: 'Màu chính (Primary)',
-		secondary: 'Màu phụ (Secondary)',
-		reset: 'Reset về mặc định',
-    instructions:'Hướng dẫn',
-		primary_help: 'Chọn màu chính cho logo, nút bấm và điểm nhấn',
-		secondary_help: 'Chọn màu phụ cho nền và các phần tử phụ',
-		live_preview: 'Xem trước ngay lập tức ở bên trái',
-		use_template: 'Dùng mẫu này'
-	}
+			title: 'Tùy chỉnh màu sắc',
+			primary: 'Màu chính (Primary)',
+			secondary: 'Màu phụ (Secondary)',
+			reset: 'Reset về mặc định',
+			instructions: 'Hướng dẫn',
+			primary_help: 'Chọn màu chính cho logo, nút bấm và điểm nhấn',
+			secondary_help: 'Chọn màu phụ cho nền và các phần tử phụ',
+			live_preview: 'Xem trước ngay lập tức ở bên trái',
+			use_template: 'Dùng mẫu này'
+		}
 	},
 	nav: {
 		home: 'Trang chủ',
