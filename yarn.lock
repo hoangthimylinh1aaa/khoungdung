@@ -447,13 +447,6 @@
   resolved "https://registry.yarnpkg.com/@lottiefiles/dotlottie-web/-/dotlottie-web-0.67.0.tgz#17c8adc4aca56a0231e2b8b04fc3f6f5625cc9ab"
   integrity sha512-XdMbVQAKqI8NLGqwN1RYQv0eGDM74JhISJFOovBf7k2Uh5B3QJwMOYhMqz8L0UZAs+LzXYdP/wZR7s8hh0uo2g==
 
-"@lottiefiles/svelte-lottie-player@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@lottiefiles/svelte-lottie-player/-/svelte-lottie-player-0.3.1.tgz#6883157ecbe876a38a39d392fb8f60b7d688c686"
-  integrity sha512-WnJasuRJJiKl1nSaZeYpaorNCdVOeR9FcWve/QLliPGxF6UUkS88uGH0Vd4ExP8PSpkagyQ7QYRBGCymBIxVxQ==
-  dependencies:
-    lottie-web "^5.10.0"
-
 "@lucide/svelte@^0.577.0":
   version "0.577.0"
   resolved "https://registry.yarnpkg.com/@lucide/svelte/-/svelte-0.577.0.tgz#467278dfbb7f80ba0005014afa2f67088881a400"
@@ -1605,6 +1598,11 @@ https-proxy-agent@^7.0.5:
     agent-base "^7.1.2"
     debug "4"
 
+husky@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.3.tgz#4936d7212e46d1dea28fef29bb3a108872cd9184"
+  integrity sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==
+
 i18next@^25.8.15:
   version "25.8.15"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-25.8.15.tgz#51d7b1d6a18f8a8d1e4df6730bf3ed8f7e6326f9"
@@ -1806,11 +1804,6 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
-
-lottie-web@^5.10.0:
-  version "5.13.0"
-  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.13.0.tgz#441d3df217cc8ba302338c3f168e1a3af0f221d3"
-  integrity sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ==
 
 lru-cache@^11.0.0:
   version "11.2.6"
