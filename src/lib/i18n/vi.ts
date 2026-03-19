@@ -3,6 +3,8 @@ import spaTemplate from '$lib/assets/templates/spa.png';
 import restaurantTemplate from '$lib/assets/templates/restaurant.png';
 import landTemplate from '$lib/assets/templates/land.png';
 import plantTemplate from '$lib/assets/templates/plant.png';
+import carWashTemplate from '$lib/assets/templates/carWash.png';
+import autoPartEcomTemplate from '$lib/assets/templates/autoPartEcom.png';
 
 export const vi = {
 	templates: {
@@ -55,7 +57,6 @@ export const vi = {
 		title_highlight: 'nổi bật',
 		subtitle: 'Hệ sinh thái sản phẩm toàn diện được thiết kế để tối ưu hoá vận hành doanh nghiệp',
 		examples_label: 'Ví dụ & ứng dụng',
-		// 1) Thiết kế website cho doanh nghiệp
 		ecommerce: {
 			name: 'Thiết kế website cho doanh nghiệp',
 			tag: 'Website chuyên nghiệp',
@@ -71,7 +72,8 @@ export const vi = {
 				{ id: 'spa', title: 'Website spa & salon', image: spaTemplate },
 				{ id: 'restaurant', title: 'Website nhà hàng & đặt bàn', image: restaurantTemplate },
 				{ id: 'land', title: 'Website bất động sản', image: landTemplate },
-				{ id: 'plants', title: 'Cây thuốc quý', image: plantTemplate }
+				{ id: 'plants', title: 'Cây thuốc quý', image: plantTemplate },
+				{ id: 'car_wash', title: 'Dịch vụ rửa xe', image: carWashTemplate }
 			]
 		},
 
@@ -87,7 +89,7 @@ export const vi = {
 				'Đồng bộ tồn kho & báo cáo'
 			],
 			examples: [
-				{ id: 'auto_parts', title: 'Ecommerce phụ tùng ô tô' },
+				{ id: 'auto_parts', title: 'Ecommerce phụ tùng ô tô', image: autoPartEcomTemplate },
 				{ id: 'beauty_ecom', title: 'Ecommerce mỹ phẩm & spa' },
 				{ id: 'dental_ecom', title: 'Ecommerce thiết bị nha khoa' }
 			]
@@ -313,6 +315,60 @@ export const vi = {
 			button: 'Yêu cầu hỗ trợ',
 			learn_more: 'Tìm hiểu thêm',
 			learn_more_href: '/docs/data-migration'
+		},
+		networkInstall: {
+			title: 'Lắp đặt & cài đặt mạng',
+			subtitle:
+				'Lắp đặt mạng tại chỗ và từ xa cho cửa hàng và văn phòng: kết nối POS, Wi‑Fi, CCTV và hạ tầng cục bộ. Nhanh chóng, an toàn và đã kiểm thử.',
+			bullets: [
+				'Kết nối POS & thiết bị',
+				'Cài đặt & tối ưu Wi‑Fi',
+				'Lắp đặt CCTV & hạ tầng an ninh',
+				'Kiểm tra & nghiệm thu tại chỗ'
+			],
+			button: 'Yêu cầu lắp đặt',
+			learn_more: 'Tìm hiểu thêm',
+			learn_more_href: '/docs/network-install'
+		},
+		computerParts: {
+			title: 'Chợ linh kiện máy tính',
+			subtitle:
+				'Mua linh kiện máy tính đáng tin cậy từ nhà cung cấp chọn lọc: CPU, GPU, bo mạch chủ, RAM và ổ cứng — kiểm tra tương thích sẵn.',
+			items: [
+				{
+					id: 'cpu_ryzen7',
+					title: 'AMD Ryzen 7 7800X',
+					price: '$329',
+					desc: 'CPU 8 nhân cho hiệu năng đơn luồng và đa luồng tốt.'
+				},
+				{
+					id: 'intel_i7',
+					title: 'Intel Core i7-13700K',
+					price: '$399',
+					desc: 'CPU hiệu năng cao cho game và công việc.'
+				},
+				{
+					id: 'gpu_rtx4070',
+					title: 'NVIDIA RTX 4070',
+					price: '$599',
+					desc: 'GPU mạnh mẽ cho chơi game 1440p và sáng tạo nội dung.'
+				},
+				{
+					id: 'ram_32gb',
+					title: 'DDR5 16GB (2x8GB)',
+					price: '$129',
+					desc: 'RAM DDR5 tốc độ cao cho nền tảng hiện đại.'
+				},
+				{
+					id: 'ssd_1tb',
+					title: '1TB NVMe SSD',
+					price: '$119',
+					desc: 'Ổ cứng NVMe hiệu năng cao, độ bền tốt.'
+				}
+			],
+			button: 'Mua ngay',
+			learn_more: 'Xem sản phẩm',
+			learn_more_href: '/products/computer-parts'
 		}
 	},
 	consultingPage: {

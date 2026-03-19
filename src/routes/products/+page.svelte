@@ -6,6 +6,8 @@
 	import ProductsHero from '$lib/components/home/ProductsHero.svelte';
 	import ProductTemplates from '$lib/components/home/ProductTemplates.svelte';
 	import DataSupportPromo from '$lib/components/home/DataSupportPromo.svelte';
+	import NetworkInstallPromo from '$lib/components/home/NetworkInstallPromo.svelte';
+	import ComputerPartsPromo from '$lib/components/home/ComputerPartsPromo.svelte';
 
 	let locale: Locale = 'vi';
 	localeStore.subscribe((v) => (locale = v));
@@ -23,6 +25,12 @@
 
 <!-- Data support promo section -->
 <DataSupportPromo />
+
+<!-- Network installation promo section -->
+<NetworkInstallPromo />
+
+<!-- Computer parts marketplace -->
+<ComputerPartsPromo />
 
 <!-- CTA -->
 <section class="section-padding">
