@@ -13,8 +13,8 @@
 
 	$: t = translations[locale].templates.colorCustomizer;
 
-	export let primaryColor: string = '#4F7A4D';
-	export let secondaryColor: string = '#F3F0E8';
+	export let primaryColor: string = '#0EA5E9'; // modern water blue
+	export let secondaryColor: string = '#F3FBFF'; // soft icy white
 
 	let selectedPrimary = primaryColor;
 	let selectedSecondary = secondaryColor;
@@ -29,60 +29,60 @@
 		desktop: '100%'
 	};
 
-	const herbs = [
+	const services = [
 		{
 			id: 1,
-			name: 'Sâm Ngọc Linh',
-			price: 'Liên hệ',
+			name: 'Rửa xe tự động tiêu chuẩn',
+			price: '89.000',
 			image:
-				'https://images.unsplash.com/photo-1515589665972-8bbf50d4b6f7?auto=format&fit=crop&w=1000&q=80',
-			duration: 'Dược liệu quý',
-			category: 'Bồi bổ'
+				'https://images.unsplash.com/photo-1607861716497-e65ab29fc7ac?auto=format&fit=crop&w=1200&q=80',
+			duration: '10 phút',
+			category: 'Tiêu chuẩn'
 		},
 		{
 			id: 2,
-			name: 'Đông Trùng Hạ Thảo',
-			price: 'Liên hệ',
+			name: 'Rửa xe bọt tuyết cao cấp',
+			price: '129.000',
 			image:
-				'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=80',
-			duration: 'Giá trị cao',
-			category: 'Tăng cường'
+				'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
+			duration: '15 phút',
+			category: 'Premium'
 		},
 		{
 			id: 3,
-			name: 'Nấm Linh Chi Đỏ',
-			price: 'Liên hệ',
+			name: 'Vệ sinh nội thất nhanh',
+			price: '179.000',
 			image:
-				'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1000&q=80',
-			duration: 'Thảo dược thiên nhiên',
-			category: 'Thanh lọc'
+				'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80',
+			duration: '20 phút',
+			category: 'Nội thất'
 		},
 		{
 			id: 4,
-			name: 'Ba Kích Tím',
-			price: 'Liên hệ',
+			name: 'Phủ bóng & bảo vệ sơn',
+			price: '249.000',
 			image:
-				'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1000&q=80',
-			duration: 'Dược tính mạnh',
-			category: 'Sinh lực'
+				'https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1200&q=80',
+			duration: '25 phút',
+			category: 'Chăm sóc sơn'
 		},
 		{
 			id: 5,
-			name: 'Atiso Đà Lạt',
-			price: 'Liên hệ',
+			name: 'Rửa gầm & bánh xe chuyên sâu',
+			price: '149.000',
 			image:
-				'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80',
-			duration: 'Thảo mộc phổ biến',
-			category: 'Giải độc'
+				'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80',
+			duration: '18 phút',
+			category: 'Gầm xe'
 		},
 		{
 			id: 6,
-			name: 'Hà Thủ Ô Đỏ',
-			price: 'Liên hệ',
+			name: 'Combo toàn diện AutoWash+',
+			price: '329.000',
 			image:
-				'https://images.unsplash.com/photo-1457296898342-cdd24585d095?auto=format&fit=crop&w=1000&q=80',
-			duration: 'Dưỡng sinh',
-			category: 'Bổ huyết'
+				'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=1200&q=80',
+			duration: '30 phút',
+			category: 'Combo'
 		}
 	];
 
@@ -94,8 +94,8 @@
 	$: secondaryColor = selectedSecondary;
 
 	function resetColors() {
-		selectedPrimary = '#4F7A4D';
-		selectedSecondary = '#F3F0E8';
+		selectedPrimary = '#0EA5E9';
+		selectedSecondary = '#F3FBFF';
 	}
 
 	function checkScreenSize() {
@@ -109,9 +109,7 @@
 		if (width < 640) {
 			deviceView = 'mobile';
 		} else if (width < 1280) {
-			if (deviceView === 'desktop') {
-				deviceView = 'tablet';
-			}
+			if (deviceView === 'desktop') deviceView = 'tablet';
 		}
 	}
 
@@ -128,17 +126,17 @@
 	});
 </script>
 
-<div class="flex min-h-screen flex-col bg-stone-950 lg:flex-row">
-	<div class="flex-1 overflow-y-auto bg-stone-900 px-4 py-20 lg:px-8 lg:py-24">
+<div class="flex min-h-screen flex-col bg-slate-950 lg:flex-row">
+	<div class="flex-1 overflow-y-auto bg-slate-900 px-4 py-20 lg:px-8 lg:py-24">
 		<!-- Device Switcher -->
 		<div class="mb-6 flex justify-center">
-			<div class="inline-flex items-center gap-1 rounded-lg bg-stone-800 p-1.5 sm:gap-2 sm:p-2">
+			<div class="inline-flex items-center gap-1 rounded-lg bg-slate-800 p-1.5 sm:gap-2 sm:p-2">
 				<button
 					on:click={() => setDevice('mobile')}
 					class="flex items-center gap-1 rounded-md px-2 py-2 transition-all duration-200 sm:gap-2 sm:px-4"
 					style="background-color: {deviceView === 'mobile'
 						? primaryColor
-						: 'transparent'}; color: {deviceView === 'mobile' ? 'white' : '#a8a29e'}"
+						: 'transparent'}; color: {deviceView === 'mobile' ? 'white' : '#94a3b8'}"
 				>
 					<Smartphone size={16} class="sm:h-[18px] sm:w-[18px]" />
 					<span class="text-xs font-medium sm:text-sm">Mobile</span>
@@ -149,7 +147,7 @@
 					class="hidden items-center gap-1 rounded-md px-2 py-2 transition-all duration-200 sm:flex sm:gap-2 sm:px-4"
 					style="background-color: {deviceView === 'tablet'
 						? primaryColor
-						: 'transparent'}; color: {deviceView === 'tablet' ? 'white' : '#a8a29e'}"
+						: 'transparent'}; color: {deviceView === 'tablet' ? 'white' : '#94a3b8'}"
 				>
 					<Tablet size={16} class="sm:h-[18px] sm:w-[18px]" />
 					<span class="text-xs font-medium sm:text-sm">Tablet</span>
@@ -160,7 +158,7 @@
 					class="hidden items-center gap-1 rounded-md px-2 py-2 transition-all duration-200 sm:gap-2 sm:px-4 xl:flex"
 					style="background-color: {deviceView === 'desktop'
 						? primaryColor
-						: 'transparent'}; color: {deviceView === 'desktop' ? 'white' : '#a8a29e'}"
+						: 'transparent'}; color: {deviceView === 'desktop' ? 'white' : '#94a3b8'}"
 				>
 					<Monitor size={16} class="sm:h-[18px] sm:w-[18px]" />
 					<span class="text-xs font-medium sm:text-sm">Desktop</span>
@@ -184,38 +182,50 @@
 							<div class="flex items-center justify-between py-3 sm:py-4">
 								<div class="flex items-center gap-2">
 									<svg
-										width="28"
-										height="28"
+										width="30"
+										height="30"
 										viewBox="0 0 40 40"
 										fill="none"
 										xmlns="http://www.w3.org/2000/svg"
 										class="sm:h-9 sm:w-9"
 									>
-										<circle cx="20" cy="20" r="18" fill={primaryColor} opacity="0.15" />
-										<path
-											d="M20 8C14 12 12 18 14 24C15.5 28 19 31 20 32C21 31 24.5 28 26 24C28 18 26 12 20 8Z"
+										<rect
+											x="4"
+											y="10"
+											width="32"
+											height="14"
+											rx="7"
 											fill={primaryColor}
+											opacity="0.18"
 										/>
-										<path d="M20 13V26" stroke="white" stroke-width="2" stroke-linecap="round" />
+										<rect x="8" y="14" width="24" height="10" rx="5" fill={primaryColor} />
+										<circle cx="13" cy="27" r="3" fill={primaryColor} />
+										<circle cx="27" cy="27" r="3" fill={primaryColor} />
 										<path
-											d="M20 18C18 16 16 15 14.5 14.5"
-											stroke="white"
-											stroke-width="1.8"
+											d="M14 8C14 8 13 10 13 12"
+											stroke={primaryColor}
+											stroke-width="2"
 											stroke-linecap="round"
 										/>
 										<path
-											d="M20 21C22 19 24 18 25.5 17.5"
-											stroke="white"
-											stroke-width="1.8"
+											d="M20 6C20 6 19 9 19 12"
+											stroke={primaryColor}
+											stroke-width="2"
+											stroke-linecap="round"
+										/>
+										<path
+											d="M26 8C26 8 25 10 25 12"
+											stroke={primaryColor}
+											stroke-width="2"
 											stroke-linecap="round"
 										/>
 									</svg>
 									<div>
 										<div class="text-lg font-bold sm:text-xl" style="color: {primaryColor};">
-											Dược Mộc Việt
+											AutoWash X
 										</div>
 										<div class="text-[8px] tracking-wide text-gray-500 sm:text-[10px]">
-											CÂY THUỐC QUÝ TỰ NHIÊN
+											RỬA XE TỰ ĐỘNG THẾ HỆ MỚI
 										</div>
 									</div>
 								</div>
@@ -228,17 +238,17 @@
 										>
 										<span
 											class="cursor-pointer text-xs font-medium text-gray-700 transition-opacity hover:opacity-70 lg:text-sm"
-											>Dược liệu</span
+											>Dịch vụ</span
 										>
 										<span
 											class="cursor-pointer text-xs font-medium text-gray-700 transition-opacity hover:opacity-70 lg:text-sm"
-											>Kiến thức</span
+											>Bảng giá</span
 										>
 										<button
 											class="rounded-full px-4 py-2 text-xs font-medium text-white transition-opacity hover:opacity-90 lg:text-sm"
 											style="background-color: {primaryColor};"
 										>
-											Tìm hiểu thêm
+											Đặt lịch ngay
 										</button>
 									</nav>
 								{/if}
@@ -248,15 +258,15 @@
 
 					<!-- Hero Banner -->
 					<section
-						class="relative flex items-center overflow-hidden py-5"
-						class:static={deviceView === 'mobile'}
+						class="relative flex items-center overflow-hidden"
+						class:h-72={deviceView === 'mobile'}
 						class:h-[26rem]={deviceView === 'tablet'}
 						class:h-[34rem]={deviceView === 'desktop'}
 					>
 						<div class="absolute inset-0">
 							<img
-								src="https://images.pexels.com/photos/906150/pexels-photo-906150.jpeg?auto=compress&cs=tinysrgb&w=1600"
-								alt="Cây thuốc quý"
+								src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80"
+								alt="Rửa xe tự động"
 								class="h-full w-full object-cover opacity-25"
 							/>
 							<div
@@ -264,15 +274,14 @@
 								style="background:
                   radial-gradient(circle at top left, {primaryColor}35 0%, transparent 30%),
                   radial-gradient(circle at bottom right, {primaryColor}20 0%, transparent 25%),
-                  linear-gradient(135deg, {secondaryColor}F2 0%, {secondaryColor}CC 100%);"
+                  linear-gradient(135deg, {secondaryColor}F2 0%, {secondaryColor}D9 100%);"
 							></div>
 						</div>
 
 						<div
-							class="absolute top-10 left-6 h-24 w-24 rounded-full opacity-30 blur-3xl sm:left-10 sm:h-32 sm:w-32"
+							class="absolute top-10 left-6 h-24 w-24 rounded-full opacity-30 blur-3xl sm:left-10 sm:h-36 sm:w-36"
 							style="background-color: {primaryColor};"
 						></div>
-
 						<div
 							class="absolute right-6 bottom-8 h-32 w-32 rounded-full opacity-20 blur-3xl sm:right-16 sm:h-44 sm:w-44"
 							style="background-color: {primaryColor};"
@@ -283,13 +292,13 @@
 								class="absolute inset-0"
 								style="background-image:
                   radial-gradient(circle, {primaryColor} 1px, transparent 1px);
-                  background-size: 22px 22px;"
+                  background-size: 20px 20px;"
 							></div>
 						</div>
 
 						<div class="relative z-10 w-full px-4 sm:px-6">
 							<div
-								class="mx-auto grid max-w-5xl items-center gap-8"
+								class="mx-auto grid max-w-6xl items-center gap-8"
 								class:grid-cols-1={deviceView !== 'desktop'}
 								class:grid-cols-2={deviceView === 'desktop'}
 							>
@@ -300,7 +309,7 @@
 									>
 										<span class="h-2 w-2 rounded-full" style="background-color: {primaryColor};"
 										></span>
-										Tinh hoa dược liệu Việt Nam
+										Công nghệ sạch nhanh và hiện đại
 									</div>
 
 									<h1
@@ -310,17 +319,17 @@
 										class:text-6xl={deviceView === 'desktop'}
 										style="color: {primaryColor};"
 									>
-										Chạm vào vẻ đẹp
-										<span class="block text-gray-900">từ thảo mộc tự nhiên</span>
+										Rửa xe tự động
+										<span class="block text-slate-900">sạch nhanh chuẩn mới</span>
 									</h1>
 
 									<p
-										class="mb-5 leading-relaxed text-gray-700 sm:mb-7"
+										class="mb-5 leading-relaxed text-slate-700 sm:mb-7"
 										class:text-sm={deviceView === 'mobile'}
 										class:text-base={deviceView !== 'mobile'}
 									>
-										Khám phá những cây thuốc quý nổi bật, giá trị truyền thống và ứng dụng hiện đại
-										trong hành trình chăm sóc sức khỏe một cách tự nhiên, an lành và bền vững.
+										Trải nghiệm dịch vụ rửa xe thế hệ mới với quy trình tự động hóa, tiết kiệm thời
+										gian, sạch đều, an toàn cho bề mặt sơn và tối ưu cho nhịp sống hiện đại.
 									</p>
 
 									<div class="flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
@@ -328,14 +337,14 @@
 											class="rounded-full px-6 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
 											style="background-color: {primaryColor};"
 										>
-											Khám phá dược liệu
+											Đặt lịch ngay
 										</button>
 
 										<button
 											class="rounded-full border px-6 py-3 font-medium transition-all duration-300"
-											style="border-color: {primaryColor}40; color: {primaryColor}; background-color: rgba(255,255,255,0.55);"
+											style="border-color: {primaryColor}40; color: {primaryColor}; background-color: rgba(255,255,255,0.65);"
 										>
-											Xem bộ sưu tập
+											Xem bảng giá
 										</button>
 									</div>
 								</div>
@@ -352,8 +361,8 @@
 												class="relative rounded-[2rem] border border-white/60 bg-white/70 p-4 shadow-2xl backdrop-blur-md"
 											>
 												<img
-													src="https://images.pexels.com/photos/906150/pexels-photo-906150.jpeg?auto=compress&cs=tinysrgb&w=1600"
-													alt="Herbal collection"
+													src="https://images.unsplash.com/photo-1607861716497-e65ab29fc7ac?auto=format&fit=crop&w=1000&q=80"
+													alt="Auto wash"
 													class="h-[26rem] w-full rounded-[1.5rem] object-cover"
 												/>
 
@@ -361,14 +370,10 @@
 													class="absolute right-8 bottom-8 left-8 rounded-2xl bg-white/90 p-4 shadow-lg backdrop-blur-md"
 												>
 													<div class="mb-1 text-xs tracking-[0.2em] text-gray-500 uppercase">
-														Bộ sưu tập nổi bật
+														Dịch vụ nổi bật
 													</div>
-													<div class="text-lg font-semibold text-gray-900">
-														Dược liệu quý chọn lọc
-													</div>
-													<div class="mt-1 text-sm text-gray-600">
-														Tự nhiên · Tinh gọn · Hiện đại
-													</div>
+													<div class="text-lg font-semibold text-gray-900">AutoWash Premium</div>
+													<div class="mt-1 text-sm text-gray-600">Nhanh · Sạch · Đồng đều</div>
 												</div>
 											</div>
 										</div>
@@ -379,7 +384,7 @@
 					</section>
 
 					<!-- Quick Stats -->
-					<section class="relative z-10 -mt-6 px-4 sm:mt-8 sm:px-6">
+					<section class="relative z-10 -mt-6 px-4 sm:-mt-8 sm:px-6">
 						<div class="mx-auto max-w-6xl">
 							<div
 								class="grid gap-3 sm:gap-4"
@@ -390,10 +395,10 @@
 									class="rounded-2xl border border-white/70 bg-white/90 p-4 shadow-lg backdrop-blur-md sm:p-5"
 								>
 									<div class="text-2xl font-bold sm:text-3xl" style="color: {primaryColor};">
-										120+
+										8 phút
 									</div>
 									<div class="mt-1 text-xs text-gray-600 sm:text-sm">
-										Loại dược liệu được giới thiệu
+										Thời gian rửa nhanh tiêu chuẩn
 									</div>
 								</div>
 
@@ -401,20 +406,9 @@
 									class="rounded-2xl border border-white/70 bg-white/90 p-4 shadow-lg backdrop-blur-md sm:p-5"
 								>
 									<div class="text-2xl font-bold sm:text-3xl" style="color: {primaryColor};">
-										30+
+										1000+
 									</div>
-									<div class="mt-1 text-xs text-gray-600 sm:text-sm">Cây thuốc quý nổi bật</div>
-								</div>
-
-								<div
-									class="rounded-2xl border border-white/70 bg-white/90 p-4 shadow-lg backdrop-blur-md sm:p-5"
-								>
-									<div class="text-2xl font-bold sm:text-3xl" style="color: {primaryColor};">
-										100%
-									</div>
-									<div class="mt-1 text-xs text-gray-600 sm:text-sm">
-										Định hướng nội dung tự nhiên
-									</div>
+									<div class="mt-1 text-xs text-gray-600 sm:text-sm">Xe phục vụ mỗi tháng</div>
 								</div>
 
 								<div
@@ -424,14 +418,23 @@
 										24/7
 									</div>
 									<div class="mt-1 text-xs text-gray-600 sm:text-sm">
-										Truy cập kiến thức mọi lúc
+										Hệ thống hoạt động linh hoạt
 									</div>
+								</div>
+
+								<div
+									class="rounded-2xl border border-white/70 bg-white/90 p-4 shadow-lg backdrop-blur-md sm:p-5"
+								>
+									<div class="text-2xl font-bold sm:text-3xl" style="color: {primaryColor};">
+										99%
+									</div>
+									<div class="mt-1 text-xs text-gray-600 sm:text-sm">Khách hàng hài lòng</div>
 								</div>
 							</div>
 						</div>
 					</section>
 
-					<!-- Herbs Section -->
+					<!-- Services Section -->
 					<section
 						class:py-8={deviceView === 'mobile'}
 						class:py-12={deviceView === 'tablet'}
@@ -443,7 +446,7 @@
 									class="mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs sm:text-sm"
 									style="background-color: {primaryColor}12; color: {primaryColor};"
 								>
-									Bộ sưu tập nổi bật
+									Gói dịch vụ hiện đại
 								</div>
 
 								<h2
@@ -453,13 +456,14 @@
 									class:text-4xl={deviceView === 'desktop'}
 									style="color: {primaryColor};"
 								>
-									Những dược liệu mang giá trị bền vững
+									Rửa sạch nhanh, chăm xe chuẩn hơn
 								</h2>
 
-								<p class="mx-auto max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base">
-									Từ những loại thảo mộc quen thuộc đến các cây thuốc quý hiếm, mỗi dược liệu đều
-									mang trong mình câu chuyện riêng về sức khỏe, truyền thống và sự gắn kết với thiên
-									nhiên.
+								<p
+									class="mx-auto max-w-2xl text-sm leading-relaxed font-light text-gray-600 sm:text-base"
+								>
+									Từ gói rửa cơ bản đến chăm sóc chuyên sâu, mọi quy trình đều được tối ưu để xe
+									sạch đẹp, vận hành nhanh và mang đến trải nghiệm tiện lợi hơn cho khách hàng.
 								</p>
 							</div>
 
@@ -469,14 +473,14 @@
 								class:grid-cols-2={deviceView === 'tablet'}
 								class:grid-cols-3={deviceView === 'desktop'}
 							>
-								{#each herbs.slice(0, deviceView === 'mobile' ? 3 : 6) as herb (herb.id)}
+								{#each services.slice(0, deviceView === 'mobile' ? 3 : 6) as service (service.id)}
 									<div
 										class="group overflow-hidden rounded-[1.5rem] border border-white/70 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-2xl"
 									>
 										<div class="relative h-48 overflow-hidden sm:h-56">
 											<img
-												src={herb.image}
-												alt={herb.name}
+												src={service.image}
+												alt={service.name}
 												class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 											/>
 
@@ -488,19 +492,19 @@
 												class="absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-medium text-white shadow backdrop-blur-md"
 												style="background-color: {primaryColor}E6;"
 											>
-												{herb.category}
+												{service.category}
 											</div>
 
 											<div class="absolute bottom-3 left-3 flex gap-2">
 												<span
 													class="rounded-full bg-white/85 px-2.5 py-1 text-[11px] text-gray-700 backdrop-blur-sm"
 												>
-													Thiên nhiên
+													Tự động
 												</span>
 												<span
 													class="rounded-full bg-white/85 px-2.5 py-1 text-[11px] text-gray-700 backdrop-blur-sm"
 												>
-													Dược liệu
+													Tiện lợi
 												</span>
 											</div>
 										</div>
@@ -512,20 +516,20 @@
 													class:text-sm={deviceView === 'mobile'}
 													class:text-lg={deviceView !== 'mobile'}
 												>
-													{herb.name}
+													{service.name}
 												</h3>
 
 												<div
 													class="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-medium"
 													style="background-color: {primaryColor}12; color: {primaryColor};"
 												>
-													Nổi bật
+													Phổ biến
 												</div>
 											</div>
 
 											<p class="mb-4 text-xs leading-relaxed text-gray-600 sm:text-sm">
-												Dược liệu được nhiều người biết đến với giá trị truyền thống và tiềm năng
-												ứng dụng trong chăm sóc sức khỏe tự nhiên.
+												Quy trình tối ưu bằng hệ thống hiện đại, giúp rút ngắn thời gian chờ mà vẫn
+												đảm bảo xe sạch đồng đều.
 											</p>
 
 											<div class="mb-4 flex items-center gap-2 text-xs text-gray-500">
@@ -534,26 +538,20 @@
 														stroke-linecap="round"
 														stroke-linejoin="round"
 														stroke-width="2"
-														d="M12 6c-2 2-4 4.5-4 7a4 4 0 008 0c0-2.5-2-5-4-7z"
-													/>
-													<path
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														stroke-width="2"
-														d="M8 19h8"
+														d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
 													/>
 												</svg>
-												<span>{herb.duration}</span>
+												<span>{service.duration}</span>
 											</div>
 
 											<div class="flex items-center justify-between">
 												<div>
-													<div class="mb-0.5 text-[11px] text-gray-500">Thông tin thêm</div>
+													<div class="mb-0.5 text-[11px] text-gray-500">Giá từ</div>
 													<span
 														class="text-base font-semibold sm:text-lg"
 														style="color: {primaryColor};"
 													>
-														{herb.price}
+														{service.price}đ
 													</span>
 												</div>
 
@@ -561,7 +559,7 @@
 													class="rounded-xl px-4 py-2 font-medium text-white transition-all duration-300 hover:opacity-90"
 													style="background-color: {primaryColor};"
 												>
-													Xem chi tiết
+													Chọn gói
 												</button>
 											</div>
 										</div>
@@ -602,11 +600,11 @@
 										</svg>
 									</div>
 									<h3 class="mb-2 text-lg font-semibold" style="color: {primaryColor};">
-										Tinh gọn và dễ tiếp cận
+										Nhanh và đồng đều
 									</h3>
 									<p class="text-sm leading-relaxed text-gray-600">
-										Nội dung được trình bày ngắn gọn, hiện đại, giúp người xem dễ dàng tiếp cận
-										thông tin về cây thuốc quý.
+										Hệ thống tự động giúp quy trình rửa xe ổn định hơn, sạch đều hơn và giảm thời
+										gian chờ đợi.
 									</p>
 								</div>
 
@@ -628,34 +626,16 @@
 												stroke-linecap="round"
 												stroke-linejoin="round"
 												stroke-width="2"
-												d="M12 20h9"
-											/>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												stroke-width="2"
-												d="M12 4h9"
-											/>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												stroke-width="2"
-												d="M4 9h16"
-											/>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												stroke-width="2"
-												d="M4 15h16"
+												d="M13 10V3L4 14h7v7l9-11h-7z"
 											/>
 										</svg>
 									</div>
 									<h3 class="mb-2 text-lg font-semibold" style="color: {primaryColor};">
-										Gần gũi nhưng vẫn cao cấp
+										Trải nghiệm hiện đại
 									</h3>
 									<p class="text-sm leading-relaxed text-gray-600">
-										Kết hợp cảm hứng thiên nhiên với layout hiện đại, tạo nên trải nghiệm xem nhẹ
-										nhàng và tươi mới.
+										Thiết kế không gian và dịch vụ theo phong cách công nghệ, phù hợp khách hàng bận
+										rộn.
 									</p>
 								</div>
 
@@ -677,23 +657,22 @@
 												stroke-linecap="round"
 												stroke-linejoin="round"
 												stroke-width="2"
-												d="M12 8v8"
+												d="M3 15a4 4 0 014-4h10a4 4 0 110 8H7a4 4 0 01-4-4z"
 											/>
 											<path
 												stroke-linecap="round"
 												stroke-linejoin="round"
 												stroke-width="2"
-												d="M8 12h8"
+												d="M7 11V9a5 5 0 0110 0v2"
 											/>
-											<circle cx="12" cy="12" r="9" stroke-width="2" />
 										</svg>
 									</div>
 									<h3 class="mb-2 text-lg font-semibold" style="color: {primaryColor};">
-										Truyền cảm hứng khám phá
+										An toàn cho xe
 									</h3>
 									<p class="text-sm leading-relaxed text-gray-600">
-										Không chỉ giới thiệu dược liệu, template còn gợi mở cảm giác khám phá thế giới
-										thảo mộc Việt Nam.
+										Vật liệu và quy trình được tối ưu để hạn chế tác động mạnh lên bề mặt sơn và chi
+										tiết xe.
 									</p>
 								</div>
 							</div>
@@ -705,7 +684,7 @@
 						<div class="mx-auto max-w-6xl">
 							<div
 								class="relative overflow-hidden rounded-[2rem] p-6 sm:p-10"
-								style="background: linear-gradient(135deg, {primaryColor}14 0%, rgba(255,255,255,0.75) 100%);"
+								style="background: linear-gradient(135deg, {primaryColor}14 0%, rgba(255,255,255,0.78) 100%);"
 							>
 								<div
 									class="absolute -top-10 -right-10 h-40 w-40 rounded-full opacity-20 blur-3xl"
@@ -718,53 +697,53 @@
 								>
 									<div>
 										<div class="mb-3 text-xs tracking-[0.25em] text-gray-500 uppercase">
-											Câu chuyện dược liệu
+											Công nghệ vận hành
 										</div>
 										<h3
 											class="mb-4 text-2xl font-semibold sm:text-3xl"
 											style="color: {primaryColor};"
 										>
-											Mỗi cây thuốc là một lát cắt của tri thức dân gian
+											Tự động hóa để việc chăm xe trở nên nhẹ nhàng hơn
 										</h3>
 										<p class="mb-5 text-sm leading-relaxed text-gray-700 sm:text-base">
-											Từ núi rừng đến đồng bằng, nhiều cây thuốc quý đã gắn bó với đời sống người
-											Việt qua nhiều thế hệ. Template này được làm mới theo hướng hiện đại để nội
-											dung về dược liệu trở nên gần gũi, trực quan và truyền cảm hứng hơn.
+											Từ khâu làm sạch bề mặt, phun bọt, xịt áp lực đến hoàn thiện, mọi bước được tổ
+											chức thông minh để mang đến trải nghiệm rửa xe nhanh, sạch và nhất quán hơn
+											mỗi ngày.
 										</p>
 
 										<button
 											class="rounded-full px-6 py-3 font-medium text-white shadow-md transition-opacity hover:opacity-90"
 											style="background-color: {primaryColor};"
 										>
-											Tìm hiểu hành trình dược liệu
+											Xem quy trình hoạt động
 										</button>
 									</div>
 
 									<div
 										class="rounded-[1.5rem] border border-white/70 bg-white/80 p-5 shadow-lg backdrop-blur-sm sm:p-6"
 									>
-										<div class="mb-2 text-sm text-gray-500">Điểm nhấn của template</div>
+										<div class="mb-2 text-sm text-gray-500">Điểm nổi bật</div>
 										<ul class="space-y-3 text-sm text-gray-700">
 											<li class="flex items-start gap-2">
 												<span
 													class="mt-1 h-2 w-2 rounded-full"
 													style="background-color: {primaryColor};"
 												></span>
-												Layout mềm mại, hiện đại và sáng hơn
+												Thiết kế sáng, sạch và tươi mới
 											</li>
 											<li class="flex items-start gap-2">
 												<span
 													class="mt-1 h-2 w-2 rounded-full"
 													style="background-color: {primaryColor};"
 												></span>
-												Họa tiết blur, pattern chấm và shape organic
+												Họa tiết water glow, blur và pattern hiện đại
 											</li>
 											<li class="flex items-start gap-2">
 												<span
 													class="mt-1 h-2 w-2 rounded-full"
 													style="background-color: {primaryColor};"
 												></span>
-												Nội dung tinh gọn, dễ đọc, hợp landing page
+												Phù hợp landing page dịch vụ rửa xe tự động
 											</li>
 										</ul>
 									</div>
@@ -790,25 +769,31 @@
 											fill="none"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<circle cx="20" cy="20" r="18" fill={primaryColor} opacity="0.15" />
-											<path
-												d="M20 8C14 12 12 18 14 24C15.5 28 19 31 20 32C21 31 24.5 28 26 24C28 18 26 12 20 8Z"
+											<rect
+												x="4"
+												y="10"
+												width="32"
+												height="14"
+												rx="7"
 												fill={primaryColor}
+												opacity="0.18"
 											/>
-											<path d="M20 13V26" stroke="white" stroke-width="2" stroke-linecap="round" />
+											<rect x="8" y="14" width="24" height="10" rx="5" fill={primaryColor} />
+											<circle cx="13" cy="27" r="3" fill={primaryColor} />
+											<circle cx="27" cy="27" r="3" fill={primaryColor} />
 										</svg>
 										<div>
 											<div class="text-base font-bold sm:text-lg" style="color: {primaryColor};">
-												Dược Mộc Việt
+												AutoWash X
 											</div>
 											<div class="text-[8px] tracking-wide text-gray-500">
-												CÂY THUỐC QUÝ TỰ NHIÊN
+												RỬA XE TỰ ĐỘNG THẾ HỆ MỚI
 											</div>
 										</div>
 									</div>
 									<p class="max-w-sm text-xs leading-relaxed font-light text-gray-600 sm:text-sm">
-										Không gian giới thiệu dược liệu theo phong cách hiện đại, giúp nội dung về cây
-										thuốc quý trở nên trực quan, tươi mới và gần gũi hơn với người xem.
+										Không gian giới thiệu dịch vụ rửa xe tự động theo phong cách hiện đại, nhanh gọn
+										và tươi mới, phù hợp cho mô hình chăm xe công nghệ cao.
 									</p>
 								</div>
 
@@ -829,13 +814,13 @@
 										<li>
 											<span
 												class="cursor-pointer font-light text-gray-600 transition-opacity hover:opacity-70"
-												>Dược liệu</span
+												>Dịch vụ</span
 											>
 										</li>
 										<li>
 											<span
 												class="cursor-pointer font-light text-gray-600 transition-opacity hover:opacity-70"
-												>Kiến thức</span
+												>Ưu đãi</span
 											>
 										</li>
 										<li>
@@ -855,17 +840,17 @@
 										Thông tin
 									</h4>
 									<ul class="space-y-1 text-xs font-light text-gray-600 sm:space-y-2 sm:text-sm">
-										<li>📞 1900 6868</li>
-										<li>📧 info@duocmocviet.vn</li>
-										<li>📍 68 Đường Dược Liệu, TP.HCM</li>
-										<li>🕐 8:00 - 18:00 hằng ngày</li>
+										<li>📞 1900 8888</li>
+										<li>📧 hello@autowashx.vn</li>
+										<li>📍 88 Xa Lộ Hà Nội, TP.HCM</li>
+										<li>🕐 7:00 - 22:00 hằng ngày</li>
 									</ul>
 								</div>
 							</div>
 
 							<div class="border-t border-gray-200 pt-4 text-center sm:pt-6">
 								<p class="text-[10px] font-light text-gray-500 sm:text-xs">
-									&copy; 2024 Dược Mộc Việt. All rights reserved.
+									&copy; 2026 AutoWash X. All rights reserved.
 								</p>
 							</div>
 						</div>
@@ -900,7 +885,7 @@
 		{/if}
 
 		<div
-			class="relative ml-auto h-full max-w-md overflow-y-auto bg-stone-900 px-4 py-8 sm:px-6 lg:max-w-none lg:px-8 lg:py-24"
+			class="relative ml-auto h-full max-w-md overflow-y-auto bg-slate-900 px-4 py-8 sm:px-6 lg:max-w-none lg:px-8 lg:py-24"
 		>
 			{#if isMobileLayout}
 				<button
@@ -916,14 +901,14 @@
 			</h2>
 
 			<div class="space-y-6 sm:space-y-8">
-				<div class="rounded-xl bg-stone-800 p-4 sm:p-6">
+				<div class="rounded-xl bg-slate-800 p-4 sm:p-6">
 					<label
 						for="primary-color"
 						class="mb-3 flex items-center justify-between text-sm font-semibold text-gray-200 sm:mb-4 sm:text-base"
 					>
 						<span>{t.primary}</span>
 						<span
-							class="h-8 w-8 rounded-lg border-2 border-stone-700 sm:h-10 sm:w-10"
+							class="h-8 w-8 rounded-lg border-2 border-slate-700 sm:h-10 sm:w-10"
 							style="background-color: {selectedPrimary};"
 						></span>
 					</label>
@@ -936,19 +921,19 @@
 					<input
 						type="text"
 						bind:value={selectedPrimary}
-						class="w-full rounded-lg border border-stone-700 bg-stone-950 px-3 py-2 font-mono text-sm text-white sm:px-4 sm:py-3 sm:text-base"
-						placeholder="#4F7A4D"
+						class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-sm text-white sm:px-4 sm:py-3 sm:text-base"
+						placeholder="#0EA5E9"
 					/>
 				</div>
 
-				<div class="rounded-xl bg-stone-800 p-4 sm:p-6">
+				<div class="rounded-xl bg-slate-800 p-4 sm:p-6">
 					<label
 						for="secondary-color"
 						class="mb-3 flex items-center justify-between text-sm font-semibold text-gray-200 sm:mb-4 sm:text-base"
 					>
 						<span>{t.secondary}</span>
 						<span
-							class="h-8 w-8 rounded-lg border-2 border-stone-700 sm:h-10 sm:w-10"
+							class="h-8 w-8 rounded-lg border-2 border-slate-700 sm:h-10 sm:w-10"
 							style="background-color: {selectedSecondary};"
 						></span>
 					</label>
@@ -961,8 +946,8 @@
 					<input
 						type="text"
 						bind:value={selectedSecondary}
-						class="w-full rounded-lg border border-stone-700 bg-stone-950 px-3 py-2 font-mono text-sm text-white sm:px-4 sm:py-3 sm:text-base"
-						placeholder="#F3F0E8"
+						class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-sm text-white sm:px-4 sm:py-3 sm:text-base"
+						placeholder="#F3FBFF"
 					/>
 				</div>
 			</div>
@@ -972,7 +957,7 @@
 			</Button>
 
 			<div
-				class="mt-6 rounded-xl border-l-4 bg-stone-800 p-4 sm:mt-8 sm:p-6"
+				class="mt-6 rounded-xl border-l-4 bg-slate-800 p-4 sm:mt-8 sm:p-6"
 				style="border-color: {primaryColor};"
 			>
 				<h3 class="mb-3 text-base font-bold text-white sm:mb-4 sm:text-lg">💡 {t.instructions}:</h3>
@@ -1018,7 +1003,7 @@
 	}
 
 	:global(.overflow-y-auto::-webkit-scrollbar-thumb) {
-		background: #57534e;
+		background: #475569;
 		border-radius: 3px;
 	}
 </style>

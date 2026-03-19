@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Restaurant from '$lib/components/templates/Restaurant.svelte';
+	import BeautyEcom from '$lib/components/templates/BeautyEcom.svelte';
 	import { localeStore } from '$lib/stores/locale';
 	import { type Locale, translations } from '$lib/i18n';
 	let locale: Locale = 'vi';
@@ -12,4 +12,4 @@
 	<meta name="description" content={p.hero_subtitle} />
 </svelte:head>
 
-<Restaurant />
+<BeautyEcom />

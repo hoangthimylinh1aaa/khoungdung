@@ -3,6 +3,8 @@ import spaTemplate from '$lib/assets/templates/spa.png';
 import restaurantTemplate from '$lib/assets/templates/restaurant.png';
 import landTemplate from '$lib/assets/templates/land.png';
 import plantTemplate from '$lib/assets/templates/plant.png';
+import carWashTemplate from '$lib/assets/templates/carWash.png';
+import autoPartEcomTemplate from '$lib/assets/templates/autoPartEcom.png';
 
 export const en = {
 	templates: {
@@ -12,16 +14,16 @@ export const en = {
 		device_desktop: 'Desktop',
 		use_template: 'Use this template',
 		colorCustomizer: {
-		title: 'Customize Colors',
-		primary: 'Primary Color',
-			instructions:'instructions',
-		secondary: 'Secondary Color',
-		reset: 'Reset to Default',
-		primary_help: 'Choose the primary color for the logo, buttons, and highlights',
-		secondary_help: 'Choose the secondary color for backgrounds and supporting elements',
-		live_preview: 'Preview instantly on the left',
-		use_template: 'Use this template'
-	}
+			title: 'Customize Colors',
+			primary: 'Primary Color',
+			instructions: 'instructions',
+			secondary: 'Secondary Color',
+			reset: 'Reset to Default',
+			primary_help: 'Choose the primary color for the logo, buttons, and highlights',
+			secondary_help: 'Choose the secondary color for backgrounds and supporting elements',
+			live_preview: 'Preview instantly on the left',
+			use_template: 'Use this template'
+		}
 	},
 	nav: {
 		home: 'Home',
@@ -71,7 +73,8 @@ export const en = {
 				{ id: 'spa', title: 'Spa & salon website', image: spaTemplate },
 				{ id: 'restaurant', title: 'Restaurant & booking site', image: restaurantTemplate },
 				{ id: 'land', title: 'Real estate', image: landTemplate },
-				{ id: 'plants', title: 'Medicinal plants', image: plantTemplate }
+				{ id: 'plants', title: 'Medicinal plants', image: plantTemplate },
+				{ id: 'car_wash', title: 'Car wash', image: carWashTemplate }
 			]
 		},
 
@@ -87,7 +90,7 @@ export const en = {
 				'Inventory sync & reporting'
 			],
 			examples: [
-				{ id: 'auto_parts', title: 'Automotive parts ecommerce' },
+				{ id: 'auto_parts', title: 'Automotive parts ecommerce', image: autoPartEcomTemplate },
 				{ id: 'beauty_ecom', title: 'Beauty & spa ecommerce' },
 				{ id: 'dental_ecom', title: 'Dental equipment ecommerce' }
 			]
@@ -312,6 +315,60 @@ export const en = {
 			button: 'Request support',
 			learn_more: 'Learn more',
 			learn_more_href: '/docs/data-migration'
+		},
+		networkInstall: {
+			title: 'Network installation & setup',
+			subtitle:
+				'Onsite and remote network installation for stores and offices: POS connectivity, Wi‑Fi, CCTV and local infrastructure setup. Fast, secure, and tested.',
+			bullets: [
+				'POS & device connectivity',
+				'Wi‑Fi setup and optimization',
+				'CCTV & security network wiring',
+				'Onsite commissioning & testing'
+			],
+			button: 'Request installation',
+			learn_more: 'Learn more',
+			learn_more_href: '/docs/network-install'
+		},
+		computerParts: {
+			title: 'Computer parts marketplace',
+			subtitle:
+				'Buy reliable computer parts from curated vendors: CPUs, GPUs, motherboards, RAM, and storage — compatibility checked.',
+			items: [
+				{
+					id: 'cpu_ryzen7',
+					title: 'AMD Ryzen 7 7800X',
+					price: '$329',
+					desc: '8-core desktop CPU, great single-threaded and multi-threaded performance.'
+				},
+				{
+					id: 'intel_i7',
+					title: 'Intel Core i7-13700K',
+					price: '$399',
+					desc: 'High-performance CPU for gaming and productivity.'
+				},
+				{
+					id: 'gpu_rtx4070',
+					title: 'NVIDIA RTX 4070',
+					price: '$599',
+					desc: 'Powerful GPU for 1440p gaming and content creation.'
+				},
+				{
+					id: 'ram_32gb',
+					title: '16GB DDR5 RAM (2x8GB)',
+					price: '$129',
+					desc: 'Fast DDR5 memory for modern platforms.'
+				},
+				{
+					id: 'ssd_1tb',
+					title: '1TB NVMe SSD',
+					price: '$119',
+					desc: 'High-speed storage with excellent endurance.'
+				}
+			],
+			button: 'Buy now',
+			learn_more: 'View product',
+			learn_more_href: '/products/computer-parts'
 		}
 	},
 	dataSupport: {

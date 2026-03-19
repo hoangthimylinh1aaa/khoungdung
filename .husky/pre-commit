@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run Prettier check before allowing commit. If it fails, the commit is aborted.
+npm run prettier:check || {
+	echo "Prettier check failed. Run 'npm run format' to fix formatting."
+	exit 1
+}
+
