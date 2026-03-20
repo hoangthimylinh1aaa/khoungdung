@@ -1,9 +1,23 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Run Prettier check before allowing commit. If it fails, the commit is aborted.
-npm run prettier:check || {
-	echo "Prettier check failed. Run 'npm run format' to fix formatting."
-	exit 1
-}
+# Find staged files to format (add or modify)
+git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|ts|svelte|css|json|md|yaml|yml)$' > /tmp/.staged_prettier || true
 
+if [ -s /tmp/.staged_prettier ]; then
+  echo "Running Prettier on staged files..."
+  # Format each file and re-add it to the index
+  while IFS= read -r file; do
+    [ -f "$file" ] || continue
+    # Use local prettier if available
+    npx --no-install prettier --write "$file" || {
+      echo "Prettier failed to format: $file"
+      exit 1
+    }
+    git add "$file"
+  done < /tmp/.staged_prettier
+  rm /tmp/.staged_prettier
+else
+  # no matching staged files
+  exit 0
+fi
