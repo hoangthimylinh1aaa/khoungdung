@@ -5,6 +5,8 @@ import landTemplate from '$lib/assets/templates/land.png';
 import plantTemplate from '$lib/assets/templates/plant.png';
 import carWashTemplate from '$lib/assets/templates/carWash.png';
 import autoPartEcomTemplate from '$lib/assets/templates/autoPartEcom.png';
+import spaEcomTemplate from '$lib/assets/templates/spaEcom.png';
+import dentisEcomTemplate from '$lib/assets/templates/dentisEcom.png';
 
 export const vi = {
 	templates: {
@@ -90,8 +92,8 @@ export const vi = {
 			],
 			examples: [
 				{ id: 'auto_parts', title: 'Ecommerce phụ tùng ô tô', image: autoPartEcomTemplate },
-				{ id: 'beauty_ecom', title: 'Ecommerce mỹ phẩm & spa' },
-				{ id: 'dental_ecom', title: 'Ecommerce thiết bị nha khoa' }
+				{ id: 'beauty_ecom', title: 'Ecommerce mỹ phẩm & spa', image: spaEcomTemplate },
+				{ id: 'dental_ecom', title: 'Ecommerce thiết bị nha khoa', image: dentisEcomTemplate }
 			]
 		},
 

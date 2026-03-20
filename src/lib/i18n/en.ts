@@ -5,6 +5,8 @@ import landTemplate from '$lib/assets/templates/land.png';
 import plantTemplate from '$lib/assets/templates/plant.png';
 import carWashTemplate from '$lib/assets/templates/carWash.png';
 import autoPartEcomTemplate from '$lib/assets/templates/autoPartEcom.png';
+import spaEcomTemplate from '$lib/assets/templates/spaEcom.png';
+import dentisEcomTemplate from '$lib/assets/templates/dentisEcom.png';
 
 export const en = {
 	templates: {
@@ -91,8 +93,8 @@ export const en = {
 			],
 			examples: [
 				{ id: 'auto_parts', title: 'Automotive parts ecommerce', image: autoPartEcomTemplate },
-				{ id: 'beauty_ecom', title: 'Beauty & spa ecommerce' },
-				{ id: 'dental_ecom', title: 'Dental equipment ecommerce' }
+				{ id: 'beauty_ecom', title: 'Beauty & spa ecommerce', image: spaEcomTemplate },
+				{ id: 'dental_ecom', title: 'Dental equipment ecommerce', image: dentisEcomTemplate }
 			]
 		},
 
