@@ -7,6 +7,9 @@ import carWashTemplate from '$lib/assets/templates/carWash.png';
 import autoPartEcomTemplate from '$lib/assets/templates/autoPartEcom.png';
 import spaEcomTemplate from '$lib/assets/templates/spaEcom.png';
 import dentisEcomTemplate from '$lib/assets/templates/dentisEcom.png';
+import hrmTemplate from '$lib/assets/templates/hrm.png';
+import crmTemplate from '$lib/assets/templates/crm.png';
+import erpTemplate from '$lib/assets/templates/erp.png';
 
 export const en = {
 	templates: {
@@ -110,9 +113,13 @@ export const en = {
 				'Process automation'
 			],
 			examples: [
-				{ id: 'hrm_solution', title: 'HR management (attendance, payroll)' },
-				{ id: 'crm_solution', title: 'CRM (sales & customer care)' },
-				{ id: 'erp_solution', title: 'ERP (finance & inventory)' }
+				{
+					id: 'hrm_solution',
+					title: 'HR management (attendance, payroll)',
+					image: hrmTemplate
+				},
+				{ id: 'crm_solution', title: 'CRM (sales & customer care)', image: crmTemplate },
+				{ id: 'erp_solution', title: 'ERP (finance & inventory)', image: erpTemplate }
 			]
 		},
 
