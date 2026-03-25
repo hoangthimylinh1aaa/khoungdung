@@ -7,6 +7,9 @@ import carWashTemplate from '$lib/assets/templates/carWash.png';
 import autoPartEcomTemplate from '$lib/assets/templates/autoPartEcom.png';
 import spaEcomTemplate from '$lib/assets/templates/spaEcom.png';
 import dentisEcomTemplate from '$lib/assets/templates/dentisEcom.png';
+import hrmTemplate from '$lib/assets/templates/hrm.png';
+import crmTemplate from '$lib/assets/templates/crm.png';
+import erpTemplate from '$lib/assets/templates/erp.png';
 
 export const vi = {
 	templates: {
@@ -109,9 +112,9 @@ export const vi = {
 				'Tự động hóa quy trình'
 			],
 			examples: [
-				{ id: 'hrm_solution', title: 'HRM: chấm công & lương' },
-				{ id: 'crm_solution', title: 'CRM: bán hàng & CSKH' },
-				{ id: 'erp_solution', title: 'ERP: tài chính & kho' }
+				{ id: 'hrm_solution', title: 'HRM: chấm công & lương', image: hrmTemplate },
+				{ id: 'crm_solution', title: 'CRM: bán hàng & CSKH', image: crmTemplate },
+				{ id: 'erp_solution', title: 'ERP: tài chính & kho', image: erpTemplate }
 			]
 		},
 
