@@ -2,6 +2,7 @@
 	import { localeStore } from '$lib/stores/locale';
 	import { translations } from '$lib/i18n';
 	import type { Locale } from '$lib/i18n';
+	import logo from '$lib/assets/logo.png';
 
 	let locale: Locale = 'vi';
 	localeStore.subscribe((v) => (locale = v));
@@ -47,7 +48,7 @@
 
 			<!-- Feature list -->
 			<ul class="flex flex-col gap-4">
-				{#each [r.left_feature_1, r.left_feature_2, r.left_feature_3] as feature}
+				{#each [r.left_feature_1, r.left_feature_2, r.left_feature_3] as feature (feature)}
 					<li class="flex items-start gap-3">
 						<span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center">
 							<!-- Diamond checkmark icon -->
@@ -77,7 +78,7 @@
 					{r.left_partners_label}
 				</p>
 				<div class="flex flex-wrap gap-3">
-					{#each ['HT Hub', 'Vietblend', 'VPBank', 'VIB'] as partner}
+					{#each ['HT Hub', 'Vietblend', 'VPBank', 'VIB'] as partner (partner)}
 						<span
 							class="border-primary/20 bg-primary/5 rounded-full border px-4 py-1.5 text-xs font-medium text-gray-400"
 						>
@@ -100,16 +101,7 @@
 		<div class="mx-auto w-full max-w-lg">
 			<!-- Mobile logo -->
 			<div class="mb-8 text-center lg:hidden">
-				<a href="/" class="inline-flex items-center gap-2" aria-label="Kho phần mềm">
-					<div
-						class="from-primary text-dark flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br to-cyan-300 text-xs font-bold shadow-lg"
-					>
-						KD
-					</div>
-					<span class="font-display text-lg font-bold text-white"
-						>Khoảng <span class="text-primary">Dung</span></span
-					>
-				</a>
+				<img src={logo} alt="" class="w-16 object-contain sm:h-20 sm:w-36" />
 			</div>
 
 			<form on:submit|preventDefault class="flex flex-col gap-5">
@@ -141,7 +133,7 @@
 							<option value="" disabled selected class="bg-[#111111] text-gray-500"
 								>{r.product_placeholder}</option
 							>
-							{#each r.product_options as opt}
+							{#each r.product_options as opt (opt)}
 								<option value={opt} class="bg-[#111111]">{opt}</option>
 							{/each}
 						</select>
@@ -203,7 +195,7 @@
 								<option value="" disabled selected class="bg-[#111111] text-gray-500"
 									>{r.job_position_placeholder}</option
 								>
-								{#each r.job_position_options as opt}
+								{#each r.job_position_options as opt (`position-${opt}`)}
 									<option value={opt} class="bg-[#111111]">{opt}</option>
 								{/each}
 							</select>
@@ -250,7 +242,7 @@
 								<option value="" disabled selected class="bg-[#111111] text-gray-500"
 									>{r.province_placeholder}</option
 								>
-								{#each r.province_options as opt}
+								{#each r.province_options as opt (`province-${opt}`)}
 									<option value={opt} class="bg-[#111111]">{opt}</option>
 								{/each}
 							</select>
@@ -281,7 +273,7 @@
 								<option value="" disabled selected class="bg-[#111111] text-gray-500"
 									>{r.headcount_placeholder}</option
 								>
-								{#each r.headcount_options as opt}
+								{#each r.headcount_options as opt (`headcount-${opt}`)}
 									<option value={opt} class="bg-[#111111]">{opt}</option>
 								{/each}
 							</select>

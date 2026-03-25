@@ -2,6 +2,7 @@
 	import { localeStore } from '$lib/stores/locale';
 	import { translations } from '$lib/i18n';
 	import type { Locale } from '$lib/i18n';
+	import logo from '$lib/assets/logo.png';
 
 	let locale: Locale = 'vi';
 	localeStore.subscribe((v) => (locale = v));
@@ -27,14 +28,7 @@
 		<div class="glass rounded-2xl p-8 sm:p-10">
 			<div class="mb-8 text-center">
 				<a href="/" class="mb-6 inline-flex items-center gap-2" aria-label="Kho phần mềm">
-					<div
-						class="from-primary text-dark flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br to-cyan-400 text-sm font-bold shadow-[0_0_20px_rgba(103,219,236,0.4)]"
-					>
-						Kho
-					</div>
-					<span class="font-display text-lg font-bold text-white"
-						>Ung <span class="text-gradient">Dung</span></span
-					>
+					<img src={logo} alt="" class="w-16 object-contain sm:h-20 sm:w-36" />
 				</a>
 				<h1 class="font-display mb-2 text-2xl font-bold text-white">{l.title}</h1>
 				<p class="text-sm text-gray-400">{l.subtitle}</p>
