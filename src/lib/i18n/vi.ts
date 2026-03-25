@@ -35,7 +35,7 @@ export const vi = {
 		customers: 'Khách hàng',
 		about: 'Về chúng tôi',
 		login: 'Đăng nhập',
-		register: 'Dùng thử miễn phí',
+		register: 'Tư vấn miễn phí',
 		cta: 'Bắt đầu ngay'
 	},
 	hero: {
@@ -432,7 +432,7 @@ export const vi = {
 		left_title_1: 'Nhận ',
 		left_title_highlight: 'tư vấn & demo',
 		left_title_2: ' miễn phí',
-		left_title_3: 'từ chuyên gia của Base',
+		left_title_3: 'từ chuyên gia của KPM',
 		left_subtitle:
 			'Base cung cấp nền tảng tùy biến sâu, dễ dàng triển khai, và đáp ứng nhu cầu đặc thù của từng lĩnh vực',
 		left_feature_1: 'Trải nghiệm ứng dụng thiết kế theo đúng nhu cầu doanh nghiệp',

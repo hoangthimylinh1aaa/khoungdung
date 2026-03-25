@@ -35,7 +35,7 @@ export const en = {
 		customers: 'Customers',
 		about: 'About',
 		login: 'Login',
-		register: 'Try for Free',
+		register: 'Free consultation',
 		cta: 'Get Started'
 	},
 	hero: {
@@ -446,7 +446,7 @@ export const en = {
 		left_title_1: 'Get free ',
 		left_title_highlight: 'consulting & demo',
 		left_title_2: '',
-		left_title_3: 'from Base experts',
+		left_title_3: 'from KPM experts',
 		left_subtitle:
 			'Base provides a deeply customizable platform, easy to deploy, and tailored to the specific needs of each industry',
 		left_feature_1: 'Applications designed to fit your exact business needs',
