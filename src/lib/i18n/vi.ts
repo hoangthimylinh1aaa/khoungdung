@@ -10,6 +10,9 @@ import dentisEcomTemplate from '$lib/assets/templates/dentisEcom.png';
 import hrmTemplate from '$lib/assets/templates/hrm.png';
 import crmTemplate from '$lib/assets/templates/crm.png';
 import erpTemplate from '$lib/assets/templates/erp.png';
+import demandForecast from '$lib/assets/templates/demandForecast.png';
+import personalization from '$lib/assets/templates/personalization.png';
+import chatbot from '$lib/assets/templates/chatbot.png';
 
 export const vi = {
 	templates: {
@@ -130,9 +133,9 @@ export const vi = {
 				'Tự động hoá quy trình'
 			],
 			examples: [
-				{ id: 'demand_forecast', title: 'Dự báo nhu cầu' },
-				{ id: 'personalization', title: 'Gợi ý & cá nhân hoá' },
-				{ id: 'chatbot', title: 'Chatbot hỗ trợ khách hàng' }
+				{ id: 'demand_forecast', title: 'Dự báo nhu cầu', image: demandForecast },
+				{ id: 'personalization', title: 'Gợi ý & cá nhân hoá', image: personalization },
+				{ id: 'chatbot', title: 'Chatbot hỗ trợ khách hàng', image: chatbot }
 			]
 		}
 	},
