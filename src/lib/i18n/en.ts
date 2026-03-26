@@ -10,6 +10,9 @@ import dentisEcomTemplate from '$lib/assets/templates/dentisEcom.png';
 import hrmTemplate from '$lib/assets/templates/hrm.png';
 import crmTemplate from '$lib/assets/templates/crm.png';
 import erpTemplate from '$lib/assets/templates/erp.png';
+import demandForecast from '$lib/assets/templates/demandForecast.png';
+import chatbot from '$lib/assets/templates/chatbot.png';
+import personalization from '$lib/assets/templates/personalization.png';
 
 export const en = {
 	templates: {
@@ -135,9 +138,9 @@ export const en = {
 				'Process automation'
 			],
 			examples: [
-				{ id: 'demand_forecast', title: 'Demand forecasting' },
-				{ id: 'personalization', title: 'Personalized recommendations' },
-				{ id: 'chatbot', title: 'Conversational chatbot' }
+				{ id: 'demand_forecast', title: 'Demand forecasting', image: demandForecast },
+				{ id: 'personalization', title: 'Personalized recommendations', image: personalization },
+				{ id: 'chatbot', title: 'Conversational chatbot', image: chatbot }
 			]
 		}
 	},
