@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { localeStore } from '$lib/stores/locale';
 	import { translations } from '$lib/i18n';
@@ -9,6 +10,7 @@
 	let scrolled = false;
 	let mobileOpen = false;
 	let locale: Locale = 'vi';
+	let ticking = false;
 
 	localeStore.subscribe((v) => (locale = v));
 
@@ -22,14 +24,26 @@
 		{ key: 'about', href: '/about' }
 	];
 
-	if (typeof window !== 'undefined') {
-		window.addEventListener('scroll', () => {
+	onMount(() => {
+		if (typeof window !== 'undefined') {
 			scrolled = window.scrollY > 20;
-		});
+		}
+	});
+
+	function handleScroll() {
+		if (typeof window === 'undefined') return;
+		const y = window.scrollY;
+		if (!ticking) {
+			window.requestAnimationFrame(() => {
+				scrolled = y > 20;
+				ticking = false;
+			});
+			ticking = true;
+		}
 	}
 </script>
 
-<svelte:window on:scroll={() => (scrolled = window.scrollY > 20)} />
+<svelte:window on:scroll={handleScroll} />
 
 <header
 	class="fixed top-0 right-0 left-0 z-50 transition-all duration-500"
