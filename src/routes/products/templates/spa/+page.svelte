@@ -1,9 +1,11 @@
 <script lang="ts">
 	import Spa from '$lib/components/templates/Spa.svelte';
 	import { localeStore } from '$lib/stores/locale';
-	import { type Locale, translations } from '$lib/i18n';
+	import { translations } from '$lib/i18n';
+	import type { Locale } from '$lib/i18n';
+
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: p = translations[locale].productsPage;
 </script>
 

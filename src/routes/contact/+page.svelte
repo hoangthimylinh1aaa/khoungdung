@@ -4,9 +4,10 @@
 	import type { Locale } from '$lib/i18n';
 	import AnimatedText from '$lib/components/ui/AnimatedText.svelte';
 	import Badge from '$lib/components/ui/Badge.svelte';
+	import ContactIcon from '$lib/components/icons/contact/ContactIcon.svelte';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: c = translations[locale].contact;
 
 	let formState = {
@@ -27,13 +28,6 @@
 		submitted = true;
 		submitting = false;
 	}
-
-	const contactIcons = {
-		address: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>`,
-		phone: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>`,
-		email: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`,
-		hours: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>`
-	};
 </script>
 
 <svelte:head>
@@ -222,19 +216,16 @@
 					<div class="space-y-4">
 						<h2 class="font-display mb-6 text-xl font-bold text-white">{c.info.title}</h2>
 
-						{#each [{ key: 'address', value: c.info.address_value, label: c.info.address }, { key: 'phone', value: c.info.phone_value, label: c.info.phone }, { key: 'email', value: c.info.email_value, label: c.info.email }, { key: 'hours', value: c.info.hours_value, label: c.info.hours }] as item (item.key)}
+						{#each items as item (item.key)}
 							<div class="card-glow group flex items-start gap-4 p-4">
 								<div
 									class="bg-primary/10 border-primary/20 group-hover:bg-primary/20 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border transition-colors"
 								>
-									<svg
-										class="text-primary h-4.5 h-5 w-4.5 w-5"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-									>
-										{contactIcons[item.key]}
-									</svg>
+									<ContactIcon
+										name={item.key}
+										className="text-primary h-5 w-5"
+										ariaLabel={item.label}
+									/>
 								</div>
 								<div>
 									<div class="mb-0.5 text-xs text-gray-500">{item.label}</div>

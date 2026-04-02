@@ -12,8 +12,7 @@
 	let locale: Locale = 'vi';
 	let ticking = false;
 
-	localeStore.subscribe((v) => (locale = v));
-
+	$: locale = $localeStore;
 	$: nav = translations[locale].nav as Record<string, string>;
 
 	const navLinks = [
@@ -31,14 +30,12 @@
 	});
 
 	function handleScroll() {
-		if (typeof window === 'undefined') return;
-		const y = window.scrollY;
 		if (!ticking) {
-			window.requestAnimationFrame(() => {
-				scrolled = y > 20;
+			ticking = true;
+			requestAnimationFrame(() => {
+				scrolled = window.scrollY > 20;
 				ticking = false;
 			});
-			ticking = true;
 		}
 	}
 </script>

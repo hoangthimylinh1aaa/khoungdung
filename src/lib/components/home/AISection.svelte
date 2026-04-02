@@ -6,7 +6,7 @@
 	import AnimatedText from '$lib/components/ui/AnimatedText.svelte';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: ai = translations[locale].ai;
 
 	const featureIcons = {

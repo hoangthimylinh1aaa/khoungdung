@@ -8,7 +8,7 @@
 	import Stats from '$lib/components/home/Stats.svelte';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: c = translations[locale].customersPage;
 </script>
 
@@ -25,17 +25,25 @@
 	></div>
 	<div class="container-custom section-padding py-8 text-center">
 		<AnimatedText>
-			<Badge variant="primary" class="mb-4">Customers</Badge>
-			<h1
-				class="font-display mb-4 text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl"
-			>
-				{c.hero_title}
-				<span class="text-gradient"> {c.hero_title_2}</span>
+			<Badge variant="primary" class="mb-4">{c.hero_badge}</Badge>
+			<h1 class="font-display mb-4 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+				{c.hero_title} <span class="text-gradient">{c.hero_title_2}</span>
 			</h1>
 			<p class="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg">{c.hero_subtitle}</p>
 		</AnimatedText>
 	</div>
 </section>
 
-<Stats />
-<Testimonials />
+<!-- Testimonials + Stats -->
+<section class="section-padding pt-0">
+	<div class="container-custom">
+		<div class="grid gap-8 lg:grid-cols-3">
+			<div class="lg:col-span-2">
+				<Testimonials />
+			</div>
+			<div>
+				<Stats />
+			</div>
+		</div>
+	</div>
+</section>

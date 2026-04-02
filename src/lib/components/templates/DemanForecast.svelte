@@ -9,7 +9,7 @@
 		ChartColumn,
 		Boxes
 	} from '@lucide/svelte';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import { goto } from '$app/navigation';
 	import { localeStore } from '$lib/stores/locale';
@@ -17,10 +17,8 @@
 	import type { Locale } from '$lib/i18n';
 
 	let locale: Locale = 'vi';
-	const unsubscribe = localeStore.subscribe((v) => (locale = v));
-	onDestroy(unsubscribe);
-
-	$: t = translations[locale].templates.colorCustomizer;
+	$: locale = $localeStore;
+	$: t = translations[locale].templates.demandForecast;
 
 	// Theme mới: AI / forecasting / data-tech
 	export let primaryColor: string = '#2563EB';

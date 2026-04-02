@@ -5,7 +5,7 @@
 	import AnimatedText from '$lib/components/ui/AnimatedText.svelte';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: s = translations[locale].stats;
 
 	const statKeys = ['clients', 'transactions', 'uptime', 'cities'] as const;

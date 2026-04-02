@@ -19,15 +19,14 @@
 	} from '@lucide/svelte';
 	import { onDestroy, onMount } from 'svelte';
 	import Button from '$lib/components/ui/Button.svelte';
-	import { type Locale, translations } from '$lib/i18n';
 	import { localeStore } from '$lib/stores/locale';
+	import { translations } from '$lib/i18n';
+	import type { Locale } from '$lib/i18n';
 	import { goto } from '$app/navigation';
 
 	let locale: Locale = 'vi';
-	const unsubscribe = localeStore.subscribe((v) => (locale = v));
-	onDestroy(unsubscribe);
-
-	$: t = translations[locale].templates.colorCustomizer;
+	$: locale = $localeStore;
+	$: t = translations[locale].templates.erpSolution;
 
 	export let title: string = 'ERP: tài chính & kho';
 	export let primaryColor: string = '#7C3AED';

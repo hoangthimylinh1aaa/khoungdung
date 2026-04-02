@@ -8,9 +8,8 @@
 	import DataSupportPromo from '$lib/components/home/DataSupportPromo.svelte';
 	import NetworkInstallPromo from '$lib/components/home/NetworkInstallPromo.svelte';
 	import ComputerPartsPromo from '$lib/components/home/ComputerPartsPromo.svelte';
-
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: p = translations[locale].productsPage;
 </script>
 

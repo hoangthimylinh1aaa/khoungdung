@@ -5,7 +5,7 @@
 	import logo from '$lib/assets/logo.png';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: f = translations[locale].footer;
 
 	const products = ['KD Commerce', 'KD Café', 'KD HRM', 'KD Chain'];
@@ -18,7 +18,7 @@
 		{
 			name: 'LinkedIn',
 			href: '#',
-			icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z'
+			icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-14h4v2z'
 		},
 		{
 			name: 'Twitter/X',

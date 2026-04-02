@@ -30,9 +30,7 @@
 	import type { Locale } from '$lib/i18n';
 
 	let locale: Locale = 'vi';
-	const unsubscribe = localeStore.subscribe((v) => (locale = v));
-	onDestroy(unsubscribe);
-
+	$: locale = $localeStore;
 	$: t = translations[locale].templates.colorCustomizer;
 
 	export let primaryColor: string = '#2563EB';
