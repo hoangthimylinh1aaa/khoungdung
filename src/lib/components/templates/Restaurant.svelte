@@ -9,7 +9,7 @@
 	import type { Locale } from '$lib/i18n';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 
 	$: t = translations[locale].templates.colorCustomizer;
 	export let primaryColor: string = '#D97941'; // burnt orange

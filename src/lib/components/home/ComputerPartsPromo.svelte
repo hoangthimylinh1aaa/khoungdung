@@ -3,12 +3,10 @@
 	import { translations } from '$lib/i18n';
 	import type { Locale } from '$lib/i18n';
 	import { goto } from '$app/navigation';
-	import { onDestroy } from 'svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 
 	let locale: Locale = 'vi';
-	const unsubscribe = localeStore.subscribe((v) => (locale = v));
-	onDestroy(() => unsubscribe());
+	$: locale = $localeStore;
 
 	$: c = (translations[locale] as any).productsPage?.computerParts ?? {
 		title: '',

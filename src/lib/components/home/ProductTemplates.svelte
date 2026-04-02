@@ -1,18 +1,14 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
 	import { goto } from '$app/navigation';
-	import type { Locale } from '$lib/i18n';
 	import { translations } from '$lib/i18n';
+	import type { Locale } from '$lib/i18n';
 	import { localeStore } from '$lib/stores/locale';
 	import { ShoppingBag, Coffee, Users, Cpu } from '@lucide/svelte';
 
 	type Template = { id: string; title: string; tag?: string; image?: string };
 
 	let locale: Locale = 'vi';
-	const unsubscribe = localeStore.subscribe((v) => (locale = v));
-	onDestroy(unsubscribe);
-
-	let t: any;
+	$: locale = $localeStore;
 	$: t = translations[locale].products;
 
 	const categories = [

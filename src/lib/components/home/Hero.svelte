@@ -5,7 +5,7 @@
 	import Badge from '../ui/Badge.svelte';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: h = translations[locale].hero;
 
 	const statsData = [

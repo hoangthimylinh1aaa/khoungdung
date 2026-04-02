@@ -8,7 +8,7 @@
 	import type { Locale } from '$lib/i18n';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 
 	$: t = translations[locale].templates.colorCustomizer;
 

@@ -4,7 +4,6 @@
 	import type { Locale } from '$lib/i18n';
 	import AnimatedText from '$lib/components/ui/AnimatedText.svelte';
 	import Badge from '../ui/Badge.svelte';
-	// Lucide icons
 	import {
 		Coffee,
 		Users,
@@ -21,7 +20,7 @@
 	} from '@lucide/svelte';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: p = translations[locale].products;
 
 	const productColors = {
@@ -31,7 +30,6 @@
 		chain: 'from-primary/20 to-green-500/10'
 	};
 
-	// Map example ids (from i18n) to Lucide icon components
 	const exampleIcons: Record<string, import('svelte').Component<IconProps>> = {
 		car_dealer: ShoppingBag,
 		spa: Scissors,

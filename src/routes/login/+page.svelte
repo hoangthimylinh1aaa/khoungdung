@@ -5,7 +5,7 @@
 	import logo from '$lib/assets/logo.png';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: l = translations[locale].loginPage;
 
 	let email = '';

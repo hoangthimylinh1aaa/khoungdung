@@ -5,7 +5,7 @@
 	import logo from '$lib/assets/logo.png';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: r = translations[locale].registerPage;
 
 	let name = '';

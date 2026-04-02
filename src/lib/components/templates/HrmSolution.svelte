@@ -12,15 +12,14 @@
 		CheckCircle2,
 		AlertCircle
 	} from '@lucide/svelte';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import { type Locale, translations } from '$lib/i18n';
 	import { localeStore } from '$lib/stores/locale';
 	import { goto } from '$app/navigation';
 
 	let locale: Locale = 'vi';
-	const unsubscribe = localeStore.subscribe((v) => (locale = v));
-	onDestroy(unsubscribe);
+	$: locale = $localeStore;
 
 	$: t = translations[locale].templates.colorCustomizer;
 	export let title: string = 'HRM: chấm công & lương';

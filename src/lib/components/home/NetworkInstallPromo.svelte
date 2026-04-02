@@ -3,17 +3,13 @@
 	import { translations } from '$lib/i18n';
 	import type { Locale } from '$lib/i18n';
 	import { goto } from '$app/navigation';
-	import { onDestroy } from 'svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import { DotLottieSvelte } from '@lottiefiles/dotlottie-svelte';
 
 	let locale: Locale = 'vi';
-	const unsubscribe = localeStore.subscribe((v) => (locale = v));
-	onDestroy(() => unsubscribe());
+	$: locale = $localeStore;
 
-	const animSrc = '/animation/network.lottie';
-
-	$: n = (translations[locale] as any).productsPage?.networkInstall ?? {
+	$: n = translations[locale].productsPage?.networkInstall ?? {
 		title: '',
 		subtitle: '',
 		bullets: [],
@@ -21,6 +17,8 @@
 		learn_more: null,
 		learn_more_href: ''
 	};
+
+	const animSrc = '/animation/network.lottie';
 
 	function goContact() {
 		goto('/contact');

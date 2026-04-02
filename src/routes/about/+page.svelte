@@ -6,7 +6,7 @@
 	import Badge from '$lib/components/ui/Badge.svelte';
 
 	let locale: Locale = 'vi';
-	localeStore.subscribe((v) => (locale = v));
+	$: locale = $localeStore;
 	$: a = translations[locale].aboutPage;
 
 	const coreValues = [
