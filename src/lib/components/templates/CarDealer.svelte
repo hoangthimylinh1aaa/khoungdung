@@ -33,11 +33,30 @@
 		deviceView = device;
 	}
 
-	// Cập nhật màu khi thay đổi
 	$: primaryColor = selectedPrimary;
 	$: secondaryColor = selectedSecondary;
 
-	// Reset về màu mặc định
+	export const highlights = [
+		{ label: 'Mau xe cao cap', value: 120, suffix: '+' },
+		{ label: 'Khach hang hai long', value: 3000, suffix: '+' },
+		{ label: 'Nam kinh nghiem', value: 12, suffix: '+' }
+	];
+
+	export const featureCards = [
+		{
+			title: 'Kiem dinh 176 buoc',
+			description: 'Moi xe deu duoc kiem tra chuyen sau truoc khi ban giao den khach hang.'
+		},
+		{
+			title: 'Tai chinh linh hoat',
+			description: 'Ho tro tra gop toi uu voi thu tuc nhanh gon va ro rang.'
+		},
+		{
+			title: 'Bao hanh minh bach',
+			description: 'Cam ket bang van ban, ho tro ky thuat va phu tung chinh hang.'
+		}
+	];
+
 	function resetColors() {
 		selectedPrimary = '#ff9966';
 		selectedSecondary = '#ffffff';
@@ -281,6 +300,22 @@
 						</div>
 					</section>
 
+					<!--					highlight-->
+					<section
+						class="section-wrap mt-8 grid gap-4 px-4 sm:px-6"
+						class:grid-cols-1={deviceView === 'mobile'}
+						class:grid-cols-3={deviceView !== 'mobile'}
+					>
+						{#each highlights as item (item.label)}
+							<div class="surface-card p-5 shadow-sm sm:p-6">
+								<p class="text-3xl font-black" style="color: {primaryColor};">
+									{item.value}{item.suffix}
+								</p>
+								<p class="text-muted mt-1 text-sm text-gray-900">{item.label}</p>
+							</div>
+						{/each}
+					</section>
+
 					<!-- Car List -->
 					<section
 						class:py-6={deviceView === 'mobile'}
@@ -289,14 +324,24 @@
 						style="background-color: {secondaryColor};"
 					>
 						<div class="px-4 sm:px-6">
-							<h2
-								class="mb-6 text-center font-bold text-gray-800"
-								class:text-xl={deviceView === 'mobile'}
-								class:text-2xl={deviceView === 'tablet'}
-								class:text-3xl={deviceView === 'desktop'}
-							>
-								Xe nổi bật
-							</h2>
+							<div class="mb-8 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+								<div>
+									<p
+										class="text-sm font-semibold tracking-wide uppercase"
+										style="color: {primaryColor}"
+									>
+										Danh mục nổi bật
+									</p>
+									<h2 class="mt-1 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+										Xe nổi bật
+									</h2>
+								</div>
+								<a
+									href="/inventory"
+									class="text-sm font-semibold text-slate-600 hover:text-slate-900"
+									>Xem tất cả mẫu xe</a
+								>
+							</div>
 							<div
 								class="grid gap-4 sm:gap-6"
 								class:grid-cols-1={deviceView === 'mobile'}
@@ -357,6 +402,23 @@
 											</div>
 										</div>
 									</div>
+								{/each}
+							</div>
+
+							<div
+								class="mt-10 grid gap-4"
+								class:grid-cols-1={deviceView === 'mobile'}
+								class:grid-cols-3={deviceView !== 'mobile'}
+							>
+								{#each featureCards as card (card.title)}
+									<article
+										class="surface-card p-6"
+										class:mb-4={deviceView === 'mobile'}
+										class:mb-6={deviceView !== 'mobile'}
+									>
+										<h3 class="text-lg font-bold text-gray-900">{card.title}</h3>
+										<p class="text-muted mt-2 text-sm text-gray-900">{card.description}</p>
+									</article>
 								{/each}
 							</div>
 						</div>
@@ -582,5 +644,11 @@
 	:global(.overflow-y-auto::-webkit-scrollbar-thumb) {
 		background: #4b5563;
 		border-radius: 3px;
+	}
+
+	.surface-card {
+		border: 1px solid rgb(148 163 184 / 0.2);
+		background: var(--color-secondary);
+		border-radius: 1rem;
 	}
 </style>
