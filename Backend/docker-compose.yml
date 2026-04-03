@@ -1,0 +1,17 @@
+# SQL Server cho môi trường dev local (Docker)
+# Chạy: docker compose up -d
+# Chuỗi kết nối mẫu trong appsettings.json (đổi password nếu cần)
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: 'Your_password123'
+    ports:
+      - '1433:1433'
+    volumes:
+      - kho_phan_mem_sql:/var/opt/mssql
+
+volumes:
+  kho_phan_mem_sql:
