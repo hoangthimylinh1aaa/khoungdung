@@ -2,6 +2,7 @@
 	import './layout.css';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
+	import GlobalLoading from '$lib/components/ui/GlobalLoading.svelte';
 </script>
 
 <svelte:head>
@@ -11,6 +12,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 </svelte:head>
 
+<GlobalLoading />
 <div class="flex min-h-screen flex-col">
 	<Header />
 	<main class="flex-1">
